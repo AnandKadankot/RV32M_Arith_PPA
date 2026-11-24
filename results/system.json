@@ -1,0 +1,398 @@
+{
+  "stock_seq": {
+    "generics": {
+      "MUL": 1,
+      "DIV": 1
+    },
+    "description": "PicoRV32 ENABLE_MUL + ENABLE_DIV",
+    "riscv_tests_passed": 45,
+    "riscv_tests_total": 45,
+    "riscv_tests": [
+      "lui",
+      "auipc",
+      "j",
+      "jal",
+      "jalr",
+      "beq",
+      "bne",
+      "blt",
+      "bge",
+      "bltu",
+      "bgeu",
+      "lb",
+      "lh",
+      "lw",
+      "lbu",
+      "lhu",
+      "sb",
+      "sh",
+      "sw",
+      "addi",
+      "slti",
+      "xori",
+      "ori",
+      "andi",
+      "slli",
+      "srli",
+      "srai",
+      "add",
+      "sub",
+      "sll",
+      "slt",
+      "xor",
+      "srl",
+      "sra",
+      "or",
+      "and",
+      "simple",
+      "mul",
+      "mulh",
+      "mulhsu",
+      "mulhu",
+      "div",
+      "divu",
+      "rem",
+      "remu"
+    ],
+    "kernels": {
+      "matmul32": {
+        "cycles": 312363,
+        "value": 1941065728,
+        "check": "PASS"
+      },
+      "fixmul": {
+        "cycles": 171061,
+        "value": 1172655557,
+        "check": "PASS"
+      },
+      "radix": {
+        "cycles": 254016,
+        "value": 1992030443,
+        "check": "PASS"
+      },
+      "sdiv": {
+        "cycles": 126003,
+        "value": 2244493220,
+        "check": "PASS"
+      }
+    }
+  },
+  "stock_fast": {
+    "generics": {
+      "MUL": 2,
+      "DIV": 1
+    },
+    "description": "PicoRV32 ENABLE_FAST_MUL + ENABLE_DIV",
+    "riscv_tests_passed": 45,
+    "riscv_tests_total": 45,
+    "riscv_tests": [
+      "lui",
+      "auipc",
+      "j",
+      "jal",
+      "jalr",
+      "beq",
+      "bne",
+      "blt",
+      "bge",
+      "bltu",
+      "bgeu",
+      "lb",
+      "lh",
+      "lw",
+      "lbu",
+      "lhu",
+      "sb",
+      "sh",
+      "sw",
+      "addi",
+      "slti",
+      "xori",
+      "ori",
+      "andi",
+      "slli",
+      "srli",
+      "srai",
+      "add",
+      "sub",
+      "sll",
+      "slt",
+      "xor",
+      "srl",
+      "sra",
+      "or",
+      "and",
+      "simple",
+      "mul",
+      "mulh",
+      "mulhsu",
+      "mulhu",
+      "div",
+      "divu",
+      "rem",
+      "remu"
+    ],
+    "kernels": {
+      "matmul32": {
+        "cycles": 173099,
+        "value": 1941065728,
+        "check": "PASS"
+      },
+      "fixmul": {
+        "cycles": 68661,
+        "value": 1172655557,
+        "check": "PASS"
+      },
+      "radix": {
+        "cycles": 254016,
+        "value": 1992030443,
+        "check": "PASS"
+      },
+      "sdiv": {
+        "cycles": 126003,
+        "value": 2244493220,
+        "check": "PASS"
+      }
+    }
+  },
+  "booth1": {
+    "generics": {
+      "MUL": 3,
+      "MUL_P": 1,
+      "DIV": 2,
+      "DIV_P": 1
+    },
+    "description": "Booth r4 1 digit/cyc + restoring 1 bit/cyc",
+    "riscv_tests_passed": 45,
+    "riscv_tests_total": 45,
+    "riscv_tests": [
+      "lui",
+      "auipc",
+      "j",
+      "jal",
+      "jalr",
+      "beq",
+      "bne",
+      "blt",
+      "bge",
+      "bltu",
+      "bgeu",
+      "lb",
+      "lh",
+      "lw",
+      "lbu",
+      "lhu",
+      "sb",
+      "sh",
+      "sw",
+      "addi",
+      "slti",
+      "xori",
+      "ori",
+      "andi",
+      "slli",
+      "srli",
+      "srai",
+      "add",
+      "sub",
+      "sll",
+      "slt",
+      "xor",
+      "srl",
+      "sra",
+      "or",
+      "and",
+      "simple",
+      "mul",
+      "mulh",
+      "mulhsu",
+      "mulhu",
+      "div",
+      "divu",
+      "rem",
+      "remu"
+    ],
+    "kernels": {
+      "matmul32": {
+        "cycles": 238635,
+        "value": 1941065728,
+        "check": "PASS"
+      },
+      "fixmul": {
+        "cycles": 101429,
+        "value": 1172655557,
+        "check": "PASS"
+      },
+      "radix": {
+        "cycles": 239748,
+        "value": 1992030443,
+        "check": "PASS"
+      },
+      "sdiv": {
+        "cycles": 119859,
+        "value": 2244493220,
+        "check": "PASS"
+      }
+    }
+  },
+  "booth2": {
+    "generics": {
+      "MUL": 3,
+      "MUL_P": 2,
+      "DIV": 2,
+      "DIV_P": 2
+    },
+    "description": "Booth r4 2 digits/cyc + restoring 2 bits/cyc",
+    "riscv_tests_passed": 45,
+    "riscv_tests_total": 45,
+    "riscv_tests": [
+      "lui",
+      "auipc",
+      "j",
+      "jal",
+      "jalr",
+      "beq",
+      "bne",
+      "blt",
+      "bge",
+      "bltu",
+      "bgeu",
+      "lb",
+      "lh",
+      "lw",
+      "lbu",
+      "lhu",
+      "sb",
+      "sh",
+      "sw",
+      "addi",
+      "slti",
+      "xori",
+      "ori",
+      "andi",
+      "slli",
+      "srli",
+      "srai",
+      "add",
+      "sub",
+      "sll",
+      "slt",
+      "xor",
+      "srl",
+      "sra",
+      "or",
+      "and",
+      "simple",
+      "mul",
+      "mulh",
+      "mulhsu",
+      "mulhu",
+      "div",
+      "divu",
+      "rem",
+      "remu"
+    ],
+    "kernels": {
+      "matmul32": {
+        "cycles": 205867,
+        "value": 1941065728,
+        "check": "PASS"
+      },
+      "fixmul": {
+        "cycles": 85045,
+        "value": 1172655557,
+        "check": "PASS"
+      },
+      "radix": {
+        "cycles": 163652,
+        "value": 1992030443,
+        "check": "PASS"
+      },
+      "sdiv": {
+        "cycles": 87091,
+        "value": 2244493220,
+        "check": "PASS"
+      }
+    }
+  },
+  "booth4": {
+    "generics": {
+      "MUL": 3,
+      "MUL_P": 4,
+      "DIV": 2,
+      "DIV_P": 4
+    },
+    "description": "Booth r4 4 digits/cyc + restoring 4 bits/cyc",
+    "riscv_tests_passed": 45,
+    "riscv_tests_total": 45,
+    "riscv_tests": [
+      "lui",
+      "auipc",
+      "j",
+      "jal",
+      "jalr",
+      "beq",
+      "bne",
+      "blt",
+      "bge",
+      "bltu",
+      "bgeu",
+      "lb",
+      "lh",
+      "lw",
+      "lbu",
+      "lhu",
+      "sb",
+      "sh",
+      "sw",
+      "addi",
+      "slti",
+      "xori",
+      "ori",
+      "andi",
+      "slli",
+      "srli",
+      "srai",
+      "add",
+      "sub",
+      "sll",
+      "slt",
+      "xor",
+      "srl",
+      "sra",
+      "or",
+      "and",
+      "simple",
+      "mul",
+      "mulh",
+      "mulhsu",
+      "mulhu",
+      "div",
+      "divu",
+      "rem",
+      "remu"
+    ],
+    "kernels": {
+      "matmul32": {
+        "cycles": 189483,
+        "value": 1941065728,
+        "check": "PASS"
+      },
+      "fixmul": {
+        "cycles": 76853,
+        "value": 1172655557,
+        "check": "PASS"
+      },
+      "radix": {
+        "cycles": 125604,
+        "value": 1992030443,
+        "check": "PASS"
+      },
+      "sdiv": {
+        "cycles": 70707,
+        "value": 2244493220,
+        "check": "PASS"
+      }
+    }
+  }
+}

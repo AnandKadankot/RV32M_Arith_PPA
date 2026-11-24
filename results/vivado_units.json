@@ -1,0 +1,464 @@
+{
+  "pico_mul": {
+    "top": "picorv32_pcpi_mul",
+    "generics": {},
+    "runs": [
+      {
+        "period_ns": 2.5,
+        "wns_ns": 0.09,
+        "fmax_mhz": 414.9,
+        "lut": 225,
+        "ff": 255,
+        "dsp": 0,
+        "crit_end": "rd_reg[10]/D",
+        "crit_levels": 2
+      },
+      {
+        "period_ns": 3.5,
+        "wns_ns": 0.664,
+        "fmax_mhz": 352.6,
+        "lut": 222,
+        "ff": 255,
+        "dsp": 0,
+        "crit_end": "rs1_reg[15]/D",
+        "crit_levels": 1
+      },
+      {
+        "period_ns": 5.0,
+        "wns_ns": 1.498,
+        "fmax_mhz": 285.6,
+        "lut": 222,
+        "ff": 255,
+        "dsp": 0,
+        "crit_end": "rs2_reg[2]/D",
+        "crit_levels": 1
+      }
+    ],
+    "best": {
+      "period_ns": 2.5,
+      "wns_ns": 0.09,
+      "fmax_mhz": 414.9,
+      "lut": 225,
+      "ff": 255,
+      "dsp": 0,
+      "crit_end": "rd_reg[10]/D",
+      "crit_levels": 2
+    },
+    "latency_cycles": [
+      36,
+      68
+    ]
+  },
+  "pico_fast_mul": {
+    "top": "picorv32_pcpi_fast_mul",
+    "generics": {},
+    "runs": [
+      {
+        "period_ns": 2.5,
+        "wns_ns": -3.192,
+        "fmax_mhz": 175.7,
+        "lut": 73,
+        "ff": 37,
+        "dsp": 4,
+        "crit_end": "rd_reg/PCIN[0]",
+        "crit_levels": 0
+      },
+      {
+        "period_ns": 3.5,
+        "wns_ns": -2.192,
+        "fmax_mhz": 175.7,
+        "lut": 73,
+        "ff": 37,
+        "dsp": 4,
+        "crit_end": "rd_reg/PCIN[0]",
+        "crit_levels": 0
+      },
+      {
+        "period_ns": 5.0,
+        "wns_ns": -0.692,
+        "fmax_mhz": 175.7,
+        "lut": 73,
+        "ff": 37,
+        "dsp": 4,
+        "crit_end": "rd_reg/PCIN[0]",
+        "crit_levels": 0
+      }
+    ],
+    "best": {
+      "period_ns": 2.5,
+      "wns_ns": -3.192,
+      "fmax_mhz": 175.7,
+      "lut": 73,
+      "ff": 37,
+      "dsp": 4,
+      "crit_end": "rd_reg/PCIN[0]",
+      "crit_levels": 0
+    },
+    "latency_cycles": [
+      2,
+      2
+    ]
+  },
+  "booth_d1": {
+    "top": "pcpi_mul_booth",
+    "generics": {
+      "DIGITS": 1
+    },
+    "runs": [
+      {
+        "period_ns": 2.5,
+        "wns_ns": -1.954,
+        "fmax_mhz": 224.5,
+        "lut": 217,
+        "ff": 110,
+        "dsp": 0,
+        "crit_end": "h_reg[31]/D",
+        "crit_levels": 12
+      },
+      {
+        "period_ns": 3.5,
+        "wns_ns": -0.837,
+        "fmax_mhz": 230.6,
+        "lut": 217,
+        "ff": 110,
+        "dsp": 0,
+        "crit_end": "h_reg[31]/D",
+        "crit_levels": 12
+      },
+      {
+        "period_ns": 5.0,
+        "wns_ns": 0.11,
+        "fmax_mhz": 204.5,
+        "lut": 206,
+        "ff": 110,
+        "dsp": 0,
+        "crit_end": "h_reg[31]/D",
+        "crit_levels": 12
+      }
+    ],
+    "best": {
+      "period_ns": 3.5,
+      "wns_ns": -0.837,
+      "fmax_mhz": 230.6,
+      "lut": 217,
+      "ff": 110,
+      "dsp": 0,
+      "crit_end": "h_reg[31]/D",
+      "crit_levels": 12
+    },
+    "latency_cycles": [
+      18,
+      18
+    ]
+  },
+  "booth_d2": {
+    "top": "pcpi_mul_booth",
+    "generics": {
+      "DIGITS": 2
+    },
+    "runs": [
+      {
+        "period_ns": 2.5,
+        "wns_ns": -3.879,
+        "fmax_mhz": 156.8,
+        "lut": 328,
+        "ff": 122,
+        "dsp": 0,
+        "crit_end": "h_reg[31]/D",
+        "crit_levels": 13
+      },
+      {
+        "period_ns": 3.5,
+        "wns_ns": -2.611,
+        "fmax_mhz": 163.6,
+        "lut": 321,
+        "ff": 117,
+        "dsp": 0,
+        "crit_end": "h_reg[33]/D",
+        "crit_levels": 14
+      },
+      {
+        "period_ns": 5.0,
+        "wns_ns": -1.189,
+        "fmax_mhz": 161.6,
+        "lut": 309,
+        "ff": 112,
+        "dsp": 0,
+        "crit_end": "h_reg[31]/D",
+        "crit_levels": 14
+      }
+    ],
+    "best": {
+      "period_ns": 3.5,
+      "wns_ns": -2.611,
+      "fmax_mhz": 163.6,
+      "lut": 321,
+      "ff": 117,
+      "dsp": 0,
+      "crit_end": "h_reg[33]/D",
+      "crit_levels": 14
+    },
+    "latency_cycles": [
+      10,
+      10
+    ]
+  },
+  "booth_d4": {
+    "top": "pcpi_mul_booth",
+    "generics": {
+      "DIGITS": 4
+    },
+    "runs": [
+      {
+        "period_ns": 2.5,
+        "wns_ns": -6.97,
+        "fmax_mhz": 105.6,
+        "lut": 533,
+        "ff": 117,
+        "dsp": 0,
+        "crit_end": "h_reg[31]/D",
+        "crit_levels": 21
+      },
+      {
+        "period_ns": 3.5,
+        "wns_ns": -5.952,
+        "fmax_mhz": 105.8,
+        "lut": 533,
+        "ff": 116,
+        "dsp": 0,
+        "crit_end": "h_reg[31]/D",
+        "crit_levels": 21
+      },
+      {
+        "period_ns": 5.0,
+        "wns_ns": -4.503,
+        "fmax_mhz": 105.2,
+        "lut": 519,
+        "ff": 116,
+        "dsp": 0,
+        "crit_end": "h_reg[31]/D",
+        "crit_levels": 20
+      }
+    ],
+    "best": {
+      "period_ns": 3.5,
+      "wns_ns": -5.952,
+      "fmax_mhz": 105.8,
+      "lut": 533,
+      "ff": 116,
+      "dsp": 0,
+      "crit_end": "h_reg[31]/D",
+      "crit_levels": 21
+    },
+    "latency_cycles": [
+      6,
+      6
+    ]
+  },
+  "pico_div": {
+    "top": "picorv32_pcpi_div",
+    "generics": {},
+    "runs": [
+      {
+        "period_ns": 2.5,
+        "wns_ns": -2.355,
+        "fmax_mhz": 206.0,
+        "lut": 360,
+        "ff": 200,
+        "dsp": 0,
+        "crit_end": "dividend_reg[17]/CE",
+        "crit_levels": 10
+      },
+      {
+        "period_ns": 3.5,
+        "wns_ns": -1.282,
+        "fmax_mhz": 209.1,
+        "lut": 342,
+        "ff": 201,
+        "dsp": 0,
+        "crit_end": "dividend_reg[3]/CE",
+        "crit_levels": 10
+      },
+      {
+        "period_ns": 5.0,
+        "wns_ns": -0.031,
+        "fmax_mhz": 198.8,
+        "lut": 335,
+        "ff": 200,
+        "dsp": 0,
+        "crit_end": "quotient_reg[7]/CE",
+        "crit_levels": 10
+      }
+    ],
+    "best": {
+      "period_ns": 3.5,
+      "wns_ns": -1.282,
+      "fmax_mhz": 209.1,
+      "lut": 342,
+      "ff": 201,
+      "dsp": 0,
+      "crit_end": "dividend_reg[3]/CE",
+      "crit_levels": 10
+    },
+    "latency_cycles": [
+      36,
+      36
+    ]
+  },
+  "restoring_b1": {
+    "top": "pcpi_div_restoring",
+    "generics": {
+      "BITS": 1
+    },
+    "runs": [
+      {
+        "period_ns": 2.5,
+        "wns_ns": -1.812,
+        "fmax_mhz": 231.9,
+        "lut": 235,
+        "ff": 107,
+        "dsp": 0,
+        "crit_end": "r_reg[2]/D",
+        "crit_levels": 11
+      },
+      {
+        "period_ns": 3.5,
+        "wns_ns": -0.565,
+        "fmax_mhz": 246.0,
+        "lut": 233,
+        "ff": 107,
+        "dsp": 0,
+        "crit_end": "r_reg[0]/D",
+        "crit_levels": 9
+      },
+      {
+        "period_ns": 5.0,
+        "wns_ns": 0.506,
+        "fmax_mhz": 222.5,
+        "lut": 231,
+        "ff": 107,
+        "dsp": 0,
+        "crit_end": "r_reg[0]/D",
+        "crit_levels": 10
+      }
+    ],
+    "best": {
+      "period_ns": 3.5,
+      "wns_ns": -0.565,
+      "fmax_mhz": 246.0,
+      "lut": 233,
+      "ff": 107,
+      "dsp": 0,
+      "crit_end": "r_reg[0]/D",
+      "crit_levels": 9
+    },
+    "latency_cycles": [
+      33,
+      33
+    ]
+  },
+  "restoring_b2": {
+    "top": "pcpi_div_restoring",
+    "generics": {
+      "BITS": 2
+    },
+    "runs": [
+      {
+        "period_ns": 2.5,
+        "wns_ns": -4.233,
+        "fmax_mhz": 148.5,
+        "lut": 282,
+        "ff": 106,
+        "dsp": 0,
+        "crit_end": "r_reg[8]/D",
+        "crit_levels": 21
+      },
+      {
+        "period_ns": 3.5,
+        "wns_ns": -3.546,
+        "fmax_mhz": 141.9,
+        "lut": 282,
+        "ff": 106,
+        "dsp": 0,
+        "crit_end": "r_reg[1]/D",
+        "crit_levels": 20
+      },
+      {
+        "period_ns": 5.0,
+        "wns_ns": -2.106,
+        "fmax_mhz": 140.7,
+        "lut": 279,
+        "ff": 106,
+        "dsp": 0,
+        "crit_end": "r_reg[1]/D",
+        "crit_levels": 20
+      }
+    ],
+    "best": {
+      "period_ns": 2.5,
+      "wns_ns": -4.233,
+      "fmax_mhz": 148.5,
+      "lut": 282,
+      "ff": 106,
+      "dsp": 0,
+      "crit_end": "r_reg[8]/D",
+      "crit_levels": 21
+    },
+    "latency_cycles": [
+      17,
+      17
+    ]
+  },
+  "restoring_b4": {
+    "top": "pcpi_div_restoring",
+    "generics": {
+      "BITS": 4
+    },
+    "runs": [
+      {
+        "period_ns": 2.5,
+        "wns_ns": -10.89,
+        "fmax_mhz": 74.7,
+        "lut": 378,
+        "ff": 105,
+        "dsp": 0,
+        "crit_end": "r_reg[8]/D",
+        "crit_levels": 41
+      },
+      {
+        "period_ns": 3.5,
+        "wns_ns": -9.971,
+        "fmax_mhz": 74.2,
+        "lut": 377,
+        "ff": 106,
+        "dsp": 0,
+        "crit_end": "r_reg[7]/D",
+        "crit_levels": 40
+      },
+      {
+        "period_ns": 5.0,
+        "wns_ns": -8.459,
+        "fmax_mhz": 74.3,
+        "lut": 376,
+        "ff": 105,
+        "dsp": 0,
+        "crit_end": "r_reg[4]/D",
+        "crit_levels": 41
+      }
+    ],
+    "best": {
+      "period_ns": 2.5,
+      "wns_ns": -10.89,
+      "fmax_mhz": 74.7,
+      "lut": 378,
+      "ff": 105,
+      "dsp": 0,
+      "crit_end": "r_reg[8]/D",
+      "crit_levels": 41
+    },
+    "latency_cycles": [
+      9,
+      9
+    ]
+  }
+}

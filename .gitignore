@@ -1,0 +1,9 @@
+build/
+sw/build/
+third_party/
+*.jou
+*.log
+*.pb
+.Xil/
+xsim.dir/
+__pycache__/

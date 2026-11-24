@@ -1,0 +1,253 @@
+{
+  "stock_seq": {
+    "top": "core_top",
+    "generics": {
+      "MUL": 1,
+      "DIV": 1
+    },
+    "runs": [
+      {
+        "period_ns": 4.0,
+        "wns_ns": -2.788,
+        "fmax_mhz": 147.3,
+        "lut": 1891,
+        "ff": 1088,
+        "dsp": 0,
+        "crit_end": "cpu/decoded_rs2_reg_rep[0]/D",
+        "crit_levels": 7
+      },
+      {
+        "period_ns": 5.0,
+        "wns_ns": -1.616,
+        "fmax_mhz": 151.1,
+        "lut": 1884,
+        "ff": 1087,
+        "dsp": 0,
+        "crit_end": "cpu/mem_rdata_q_reg[28]/D",
+        "crit_levels": 7
+      },
+      {
+        "period_ns": 6.0,
+        "wns_ns": -0.724,
+        "fmax_mhz": 148.7,
+        "lut": 1880,
+        "ff": 1090,
+        "dsp": 0,
+        "crit_end": "cpu/decoded_rs1_reg_rep[1]/D",
+        "crit_levels": 7
+      }
+    ],
+    "best": {
+      "period_ns": 5.0,
+      "wns_ns": -1.616,
+      "fmax_mhz": 151.1,
+      "lut": 1884,
+      "ff": 1087,
+      "dsp": 0,
+      "crit_end": "cpu/mem_rdata_q_reg[28]/D",
+      "crit_levels": 7
+    }
+  },
+  "stock_fast": {
+    "top": "core_top",
+    "generics": {
+      "MUL": 2,
+      "DIV": 1
+    },
+    "runs": [
+      {
+        "period_ns": 4.0,
+        "wns_ns": -2.897,
+        "fmax_mhz": 145.0,
+        "lut": 1750,
+        "ff": 920,
+        "dsp": 4,
+        "crit_end": "cpu/mem_rdata_q_reg[13]/CE",
+        "crit_levels": 6
+      },
+      {
+        "period_ns": 5.0,
+        "wns_ns": -1.97,
+        "fmax_mhz": 143.5,
+        "lut": 1722,
+        "ff": 954,
+        "dsp": 4,
+        "crit_end": "cpu/mem_rdata_q_reg[24]/D",
+        "crit_levels": 7
+      },
+      {
+        "period_ns": 6.0,
+        "wns_ns": -0.686,
+        "fmax_mhz": 149.6,
+        "lut": 1706,
+        "ff": 955,
+        "dsp": 4,
+        "crit_end": "cpu/decoded_rs1_reg_rep[1]/D",
+        "crit_levels": 7
+      }
+    ],
+    "best": {
+      "period_ns": 6.0,
+      "wns_ns": -0.686,
+      "fmax_mhz": 149.6,
+      "lut": 1706,
+      "ff": 955,
+      "dsp": 4,
+      "crit_end": "cpu/decoded_rs1_reg_rep[1]/D",
+      "crit_levels": 7
+    }
+  },
+  "booth1": {
+    "top": "core_top",
+    "generics": {
+      "MUL": 3,
+      "MUL_P": 1,
+      "DIV": 2,
+      "DIV_P": 1
+    },
+    "runs": [
+      {
+        "period_ns": 4.0,
+        "wns_ns": -3.062,
+        "fmax_mhz": 141.6,
+        "lut": 1744,
+        "ff": 852,
+        "dsp": 0,
+        "crit_end": "cpu/mem_rdata_q_reg[13]/D",
+        "crit_levels": 7
+      },
+      {
+        "period_ns": 5.0,
+        "wns_ns": -1.831,
+        "fmax_mhz": 146.4,
+        "lut": 1729,
+        "ff": 854,
+        "dsp": 0,
+        "crit_end": "cpu/mem_rdata_q_reg[13]/CE",
+        "crit_levels": 7
+      },
+      {
+        "period_ns": 6.0,
+        "wns_ns": -1.189,
+        "fmax_mhz": 139.1,
+        "lut": 1729,
+        "ff": 849,
+        "dsp": 0,
+        "crit_end": "cpu/mem_rdata_q_reg[23]/D",
+        "crit_levels": 7
+      }
+    ],
+    "best": {
+      "period_ns": 5.0,
+      "wns_ns": -1.831,
+      "fmax_mhz": 146.4,
+      "lut": 1729,
+      "ff": 854,
+      "dsp": 0,
+      "crit_end": "cpu/mem_rdata_q_reg[13]/CE",
+      "crit_levels": 7
+    }
+  },
+  "booth2": {
+    "top": "core_top",
+    "generics": {
+      "MUL": 3,
+      "MUL_P": 2,
+      "DIV": 2,
+      "DIV_P": 2
+    },
+    "runs": [
+      {
+        "period_ns": 4.0,
+        "wns_ns": -3.072,
+        "fmax_mhz": 141.4,
+        "lut": 1901,
+        "ff": 850,
+        "dsp": 0,
+        "crit_end": "cpu/decoded_rs2_reg_rep[4]/D",
+        "crit_levels": 7
+      },
+      {
+        "period_ns": 5.0,
+        "wns_ns": -2.407,
+        "fmax_mhz": 135.0,
+        "lut": 1893,
+        "ff": 850,
+        "dsp": 0,
+        "crit_end": "cpu/mem_rdata_q_reg[12]/CE",
+        "crit_levels": 7
+      },
+      {
+        "period_ns": 6.0,
+        "wns_ns": -1.056,
+        "fmax_mhz": 141.7,
+        "lut": 1859,
+        "ff": 849,
+        "dsp": 0,
+        "crit_end": "cpu/mem_rdata_q_reg[13]/CE",
+        "crit_levels": 7
+      }
+    ],
+    "best": {
+      "period_ns": 6.0,
+      "wns_ns": -1.056,
+      "fmax_mhz": 141.7,
+      "lut": 1859,
+      "ff": 849,
+      "dsp": 0,
+      "crit_end": "cpu/mem_rdata_q_reg[13]/CE",
+      "crit_levels": 7
+    }
+  },
+  "booth4": {
+    "top": "core_top",
+    "generics": {
+      "MUL": 3,
+      "MUL_P": 4,
+      "DIV": 2,
+      "DIV_P": 4
+    },
+    "runs": [
+      {
+        "period_ns": 4.0,
+        "wns_ns": -9.57,
+        "fmax_mhz": 73.7,
+        "lut": 2201,
+        "ff": 851,
+        "dsp": 0,
+        "crit_end": "g_div.div/r_reg[0]/D",
+        "crit_levels": 41
+      },
+      {
+        "period_ns": 5.0,
+        "wns_ns": -8.648,
+        "fmax_mhz": 73.3,
+        "lut": 2181,
+        "ff": 851,
+        "dsp": 0,
+        "crit_end": "g_div.div/r_reg[4]/D",
+        "crit_levels": 41
+      },
+      {
+        "period_ns": 6.0,
+        "wns_ns": -7.735,
+        "fmax_mhz": 72.8,
+        "lut": 2165,
+        "ff": 851,
+        "dsp": 0,
+        "crit_end": "g_div.div/r_reg[0]/D",
+        "crit_levels": 41
+      }
+    ],
+    "best": {
+      "period_ns": 4.0,
+      "wns_ns": -9.57,
+      "fmax_mhz": 73.7,
+      "lut": 2201,
+      "ff": 851,
+      "dsp": 0,
+      "crit_end": "g_div.div/r_reg[0]/D",
+      "crit_levels": 41
+    }
+  }
+}
