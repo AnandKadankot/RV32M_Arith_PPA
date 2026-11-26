@@ -28,21 +28,27 @@ LABEL = {"pico_mul": "pico_mul", "pico_fast_mul": "pico_fast_mul", "booth_d1": "
 MULS = ["pico_mul", "pico_fast_mul", "booth_d1", "booth_d2", "booth_d4"]
 DIVS = ["pico_div", "restoring_b1", "restoring_b2", "restoring_b4"]
 # label offsets (points) where neighbours would collide
-OFFSET = {("nangate45", "booth_d2"): (-7, 0, "right"), ("nangate45", "restoring_b2"): (7, -4, "left"),
-          ("sky130hd", "pico_mul"): (-7, -2, "right"), ("sky130hd", "booth_d2"): (-7, 0, "right"),
-          ("sky130hd", "pico_div"): (7, 4, "left"), ("sky130hd", "restoring_b1"): (-7, 6, "right"),
+OFFSET = {("nangate45", "booth_d2"): (-7, 0, "right"), ("nangate45", "restoring_b2"): (-7, 7, "right"),
+          ("nangate45", "pico_mul"): (-7, -7, "right"),
+          ("sky130hd", "pico_mul"): (7, 7, "left"), ("sky130hd", "booth_d2"): (-7, 0, "right"),
+          ("sky130hd", "pico_div"): (7, 4, "left"), ("sky130hd", "restoring_b1"): (7, -8, "left"),
           ("sky130hd", "booth_d1"): (-7, 0, "right")}
 PDK_TITLE = {"nangate45": "Nangate 45 nm", "sky130hd": "SkyWater 130 nm"}
 
 # ---------------------------------------------------------------- 1. ASIC trade-off
-fig, axes = plt.subplots(1, 2, figsize=(11, 4.6), facecolor=SURFACE)
+fig, axes = plt.subplots(1, 2, figsize=(11, 4.8), facecolor=SURFACE)
 for ax, pdk in zip(axes, ["nangate45", "sky130hd"]):
     ax.set_facecolor(SURFACE)
     d = orfs[pdk]
     for names, col, fam in ((MULS, MUL_C, "multipliers (MUL)"), (DIVS, DIV_C, "dividers (DIV)")):
-        xs = [d[n]["op_time_ns"] for n in names]
-        ys = [d[n]["area_um2"] for n in names]
-        ax.scatter(xs, ys, s=60, color=col, edgecolor=SURFACE, linewidth=2, zorder=3, label=fam)
+        # every clock target of the sweep, faint and joined per unit
+        for n in names:
+            runs = d[n]["runs"]
+            ax.plot([r["op_time_ns"] for r in runs], [r["area_um2"] for r in runs], color=col,
+                    alpha=0.25, linewidth=1, marker="o", markersize=3, zorder=2)
+        xs = [d[n]["best_adp"]["op_time_ns"] for n in names]
+        ys = [d[n]["best_adp"]["area_um2"] for n in names]
+        ax.scatter(xs, ys, s=64, color=col, edgecolor=SURFACE, linewidth=2, zorder=3, label=fam)
         for n, x, y in zip(names, xs, ys):
             dx, dy, ha = OFFSET.get((pdk, n), (7, 3, "left"))
             ax.annotate(LABEL[n], (x, y), xytext=(dx, dy), textcoords="offset points",
@@ -50,14 +56,14 @@ for ax, pdk in zip(axes, ["nangate45", "sky130hd"]):
     ax.set_xscale("log"); ax.set_yscale("log")
     ax.set_xlabel("time per operation (ns)  =  latency × critical-path delay")
     ax.set_ylabel("standard-cell area (µm²)")
-    ax.set_title(f"{PDK_TITLE[pdk]} (clock target {d[MULS[0]]['clock_target_ns']} ns)",
-                 loc="left", fontsize=11)
+    ax.set_title(PDK_TITLE[pdk], loc="left", fontsize=11)
     ax.grid(True, which="major", color=GRID, linewidth=0.8, zorder=0)
-    for s in ("top", "right"):
-        ax.spines[s].set_visible(False)
+    for s_ in ("top", "right"):
+        ax.spines[s_].set_visible(False)
 axes[0].legend(frameon=False, loc="upper right", fontsize=9)
-fig.suptitle("RV32M units after place-and-route (OpenROAD): lower-left is better",
-             x=0.01, ha="left", fontsize=12)
+fig.suptitle("RV32M units after place-and-route (OpenROAD): large dots = each unit at its best "
+             "area-delay point; faint = clock-target sweep. Lower-left is better.",
+             x=0.01, ha="left", fontsize=10.5)
 fig.tight_layout()
 fig.savefig(R / "asic_tradeoff.png", dpi=160, facecolor=SURFACE)
 

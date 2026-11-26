@@ -1,0 +1,2383 @@
+{
+  "nangate45": {
+    "pico_mul": {
+      "area_um2": {
+        "synth": 2454.38,
+        "placed": 2530.72,
+        "cts": 2608.66,
+        "routed": 2608.66,
+        "core": 6012.93
+      },
+      "utilization_pct": 43.4,
+      "timing": {
+        "placed": {
+          "setup_wns": 1.10918,
+          "setup_tns": 0,
+          "hold_wns": 0.0824969,
+          "hold_tns": 0,
+          "fmax_mhz": 1122.6
+        },
+        "cts": {
+          "setup_wns": 1.23865,
+          "setup_tns": 0,
+          "hold_wns": 0.0845401,
+          "hold_tns": 0,
+          "fmax_mhz": 1313.5
+        },
+        "routed": {
+          "setup_wns": 1.23337,
+          "setup_tns": 0,
+          "hold_wns": 0.0836808,
+          "hold_tns": 0,
+          "fmax_mhz": 1304.4
+        }
+      },
+      "cts": {
+        "setup_skew_ps": 3.7,
+        "hold_skew_ps": 3.7,
+        "clock_buffers": 60,
+        "clock_inverters": 13,
+        "clock_cell_area_um2": 77.94,
+        "timing_repair_buffers": 133,
+        "timing_repair_area_um2": 110.39,
+        "hold_buffers": 0
+      },
+      "routing": {
+        "wirelength_um": 10182,
+        "vias": 8238,
+        "drc_errors": 0
+      },
+      "congestion": {
+        "total_usage_pct": 10.52,
+        "total_overflow": 0,
+        "busiest_layer": "metal2",
+        "busiest_usage_pct": 30.81,
+        "by_layer_pct": {
+          "metal2": 30.81,
+          "metal3": 20.93,
+          "metal4": 4.23,
+          "metal5": 3.05,
+          "metal6": 0.04
+        }
+      },
+      "metal": {
+        "signal": {
+          "length_um": 8644.1,
+          "area_um2": 631.85,
+          "by_layer_um2": {
+            "metal2": 297.18,
+            "metal3": 281.14,
+            "metal4": 34.38,
+            "metal5": 8.83,
+            "metal6": 10.31
+          }
+        },
+        "clock": {
+          "length_um": 1538.7,
+          "area_um2": 141.71,
+          "by_layer_um2": {
+            "metal2": 37.62,
+            "metal3": 36.08,
+            "metal4": 33.93,
+            "metal5": 34.08
+          }
+        }
+      },
+      "critical_path": {
+        "start": "resetn",
+        "end": "mul_counter[5]$_DFFE_PP_",
+        "arrival_ns": 0.85,
+        "clk_to_q_ns": 0.09,
+        "logic_depth": 5,
+        "logic_delay_ns": 0.32,
+        "cell_mix": {
+          "BUF": 2,
+          "AOI21": 2,
+          "NAND2": 1
+        }
+      },
+      "gate_level_sim": {
+        "x": {
+          "result": "PASS",
+          "checks": 2024,
+          "errors": 0
+        },
+        "1": {
+          "result": "PASS",
+          "checks": 2024,
+          "errors": 0
+        },
+        "0": {
+          "result": "PASS",
+          "checks": 2024,
+          "errors": 0
+        }
+      },
+      "power": {
+        "internal_mw": 1.07,
+        "switching_mw": 0.398,
+        "leakage_uw": 52.1,
+        "total_mw": 1.52,
+        "clock_tree_mw": 0.545,
+        "nets": 1746,
+        "nets_annotated": 1744
+      },
+      "power_workload": {
+        "ops": 1000,
+        "cycles": 62778,
+        "cycles_per_op": 62.78
+      },
+      "clock_ns": 2.0,
+      "energy_pj_per_op": 190.85
+    },
+    "pico_fast_mul": {
+      "area_um2": {
+        "synth": 8159.02,
+        "placed": 8141.73,
+        "cts": 8184.55,
+        "routed": 8184.55,
+        "core": 20149.5
+      },
+      "utilization_pct": 40.6,
+      "timing": {
+        "placed": {
+          "setup_wns": 0.199505,
+          "setup_tns": 0,
+          "hold_wns": 0.104182,
+          "hold_tns": 0,
+          "fmax_mhz": 555.4
+        },
+        "cts": {
+          "setup_wns": 0.197913,
+          "setup_tns": 0,
+          "hold_wns": 0.108558,
+          "hold_tns": 0,
+          "fmax_mhz": 554.9
+        },
+        "routed": {
+          "setup_wns": 0.201892,
+          "setup_tns": 0,
+          "hold_wns": 0.107996,
+          "hold_tns": 0,
+          "fmax_mhz": 556.1
+        }
+      },
+      "cts": {
+        "setup_skew_ps": 7.4,
+        "hold_skew_ps": 7.4,
+        "clock_buffers": 17,
+        "clock_inverters": 15,
+        "clock_cell_area_um2": 42.83,
+        "timing_repair_buffers": 216,
+        "timing_repair_area_um2": 178.75,
+        "hold_buffers": 0
+      },
+      "routing": {
+        "wirelength_um": 47011,
+        "vias": 24091,
+        "drc_errors": 0
+      },
+      "congestion": {
+        "total_usage_pct": 15.65,
+        "total_overflow": 0,
+        "busiest_layer": "metal2",
+        "busiest_usage_pct": 47.14,
+        "by_layer_pct": {
+          "metal2": 47.14,
+          "metal3": 28.92,
+          "metal4": 9.99,
+          "metal5": 2.52,
+          "metal6": 0.3
+        }
+      },
+      "metal": {
+        "signal": {
+          "length_um": 45693.1,
+          "area_um2": 3537.51,
+          "by_layer_um2": {
+            "metal2": 1517.28,
+            "metal3": 1342.25,
+            "metal4": 569.5,
+            "metal5": 78.61,
+            "metal6": 29.87
+          }
+        },
+        "clock": {
+          "length_um": 1318.1,
+          "area_um2": 127.5,
+          "by_layer_um2": {
+            "metal2": 31.35,
+            "metal3": 25.68,
+            "metal4": 40.06,
+            "metal5": 30.4
+          }
+        }
+      },
+      "critical_path": {
+        "start": "rs1[32]$_SDFFCE_PN0P_",
+        "end": "rd[60]$_DFF_P_",
+        "arrival_ns": 1.89,
+        "clk_to_q_ns": 0.15,
+        "logic_depth": 20,
+        "logic_delay_ns": 1.61,
+        "cell_mix": {
+          "FA": 8,
+          "NOR3": 2,
+          "AND2": 1,
+          "BUF": 1,
+          "HA": 1,
+          "INV": 1
+        }
+      },
+      "gate_level_sim": {
+        "x": {
+          "result": "PASS",
+          "checks": 2024,
+          "errors": 0
+        },
+        "1": {
+          "result": "PASS",
+          "checks": 2024,
+          "errors": 0
+        },
+        "0": {
+          "result": "PASS",
+          "checks": 2024,
+          "errors": 0
+        }
+      },
+      "power": {
+        "internal_mw": 1.02,
+        "switching_mw": 0.76,
+        "leakage_uw": 146.0,
+        "total_mw": 1.93,
+        "clock_tree_mw": 0.357,
+        "nets": 4991,
+        "nets_annotated": 4989
+      },
+      "power_workload": {
+        "ops": 1000,
+        "cycles": 5002,
+        "cycles_per_op": 5.0
+      },
+      "clock_ns": 2.0,
+      "energy_pj_per_op": 19.31
+    },
+    "booth_d1": {
+      "area_um2": {
+        "synth": 1580.31,
+        "placed": 1639.36,
+        "cts": 1658.51,
+        "routed": 1658.51,
+        "core": 3862.32
+      },
+      "utilization_pct": 42.9,
+      "timing": {
+        "placed": {
+          "setup_wns": 0.882347,
+          "setup_tns": 0,
+          "hold_wns": 0.0985534,
+          "hold_tns": 0,
+          "fmax_mhz": 894.7
+        },
+        "cts": {
+          "setup_wns": 0.879136,
+          "setup_tns": 0,
+          "hold_wns": 0.101009,
+          "hold_tns": 0,
+          "fmax_mhz": 892.2
+        },
+        "routed": {
+          "setup_wns": 0.884593,
+          "setup_tns": 0,
+          "hold_wns": 0.10101,
+          "hold_tns": 0,
+          "fmax_mhz": 896.5
+        }
+      },
+      "cts": {
+        "setup_skew_ps": 3.6,
+        "hold_skew_ps": 3.6,
+        "clock_buffers": 11,
+        "clock_inverters": 5,
+        "clock_cell_area_um2": 19.15,
+        "timing_repair_buffers": 129,
+        "timing_repair_area_um2": 102.94,
+        "hold_buffers": 0
+      },
+      "routing": {
+        "wirelength_um": 8721,
+        "vias": 6796,
+        "drc_errors": 0
+      },
+      "congestion": {
+        "total_usage_pct": 14.33,
+        "total_overflow": 0,
+        "busiest_layer": "metal2",
+        "busiest_usage_pct": 40.98,
+        "by_layer_pct": {
+          "metal2": 40.98,
+          "metal3": 26.87,
+          "metal4": 8.39,
+          "metal5": 3.51,
+          "metal6": 1.37
+        }
+      },
+      "metal": {
+        "signal": {
+          "length_um": 8043.9,
+          "area_um2": 625.18,
+          "by_layer_um2": {
+            "metal2": 259.02,
+            "metal3": 241.95,
+            "metal4": 101.59,
+            "metal5": 3.45,
+            "metal6": 19.18
+          }
+        },
+        "clock": {
+          "length_um": 677.2,
+          "area_um2": 59.84,
+          "by_layer_um2": {
+            "metal2": 21.29,
+            "metal3": 13.68,
+            "metal4": 5.74,
+            "metal5": 14.58,
+            "metal6": 4.55
+          }
+        }
+      },
+      "critical_path": {
+        "start": "m[0]$_DFFE_PP_",
+        "end": "h[34]$_SDFFCE_PP0P_",
+        "arrival_ns": 1.17,
+        "clk_to_q_ns": 0.1,
+        "logic_depth": 16,
+        "logic_delay_ns": 0.99,
+        "cell_mix": {
+          "HA": 2,
+          "AND2": 2,
+          "OR3": 2,
+          "NAND2": 1,
+          "NOR3": 1,
+          "NAND3": 1
+        }
+      },
+      "gate_level_sim": {
+        "x": {
+          "result": "PASS",
+          "checks": 2024,
+          "errors": 0
+        },
+        "1": {
+          "result": "PASS",
+          "checks": 2024,
+          "errors": 0
+        },
+        "0": {
+          "result": "PASS",
+          "checks": 2024,
+          "errors": 0
+        }
+      },
+      "power": {
+        "internal_mw": 0.648,
+        "switching_mw": 0.386,
+        "leakage_uw": 34.8,
+        "total_mw": 1.07,
+        "clock_tree_mw": 0.184,
+        "nets": 1242,
+        "nets_annotated": 1240
+      },
+      "power_workload": {
+        "ops": 1000,
+        "cycles": 21002,
+        "cycles_per_op": 21.0
+      },
+      "clock_ns": 2.0,
+      "energy_pj_per_op": 44.94
+    },
+    "booth_d2": {
+      "area_um2": {
+        "synth": 2171.09,
+        "placed": 2184.92,
+        "cts": 2206.2,
+        "routed": 2206.2,
+        "core": 5352.98
+      },
+      "utilization_pct": 41.2,
+      "timing": {
+        "placed": {
+          "setup_wns": 0.499705,
+          "setup_tns": 0,
+          "hold_wns": 0.101103,
+          "hold_tns": 0,
+          "fmax_mhz": 666.5
+        },
+        "cts": {
+          "setup_wns": 0.49083,
+          "setup_tns": 0,
+          "hold_wns": 0.103512,
+          "hold_tns": 0,
+          "fmax_mhz": 662.6
+        },
+        "routed": {
+          "setup_wns": 0.479206,
+          "setup_tns": 0,
+          "hold_wns": 0.102932,
+          "hold_tns": 0,
+          "fmax_mhz": 657.6
+        }
+      },
+      "cts": {
+        "setup_skew_ps": 4.7,
+        "hold_skew_ps": 4.7,
+        "clock_buffers": 9,
+        "clock_inverters": 7,
+        "clock_cell_area_um2": 21.28,
+        "timing_repair_buffers": 134,
+        "timing_repair_area_um2": 107.46,
+        "hold_buffers": 0
+      },
+      "routing": {
+        "wirelength_um": 13680,
+        "vias": 10204,
+        "drc_errors": 0
+      },
+      "congestion": {
+        "total_usage_pct": 16.11,
+        "total_overflow": 0,
+        "busiest_layer": "metal2",
+        "busiest_usage_pct": 46.03,
+        "by_layer_pct": {
+          "metal2": 46.03,
+          "metal3": 28.42,
+          "metal4": 13.27,
+          "metal5": 3.71,
+          "metal6": 0.59
+        }
+      },
+      "metal": {
+        "signal": {
+          "length_um": 12945.1,
+          "area_um2": 1041.66,
+          "by_layer_um2": {
+            "metal2": 406.24,
+            "metal3": 364.42,
+            "metal4": 222.4,
+            "metal5": 20.19,
+            "metal6": 28.41
+          }
+        },
+        "clock": {
+          "length_um": 735.2,
+          "area_um2": 67.48,
+          "by_layer_um2": {
+            "metal2": 20.43,
+            "metal3": 15.02,
+            "metal4": 17.72,
+            "metal5": 14.31
+          }
+        }
+      },
+      "critical_path": {
+        "start": "l[0]$_DFFE_PP_",
+        "end": "h[34]$_SDFFCE_PP0P_",
+        "arrival_ns": 1.58,
+        "clk_to_q_ns": 0.1,
+        "logic_depth": 24,
+        "logic_delay_ns": 1.38,
+        "cell_mix": {
+          "OAI21": 3,
+          "NOR3": 3,
+          "HA": 2,
+          "NOR2": 2,
+          "AOI21": 2,
+          "NAND3": 2
+        }
+      },
+      "gate_level_sim": {
+        "x": {
+          "result": "FAIL",
+          "checks": 2024,
+          "errors": 1,
+          "first_failure": "FAIL f3=0 a=00000000 b=00000000 got=00X00000 exp=00000000 ready=1 lat=10"
+        },
+        "1": {
+          "result": "PASS",
+          "checks": 2024,
+          "errors": 0
+        },
+        "0": {
+          "result": "PASS",
+          "checks": 2024,
+          "errors": 0
+        }
+      },
+      "power": {
+        "internal_mw": 0.771,
+        "switching_mw": 0.569,
+        "leakage_uw": 48.4,
+        "total_mw": 1.39,
+        "clock_tree_mw": 0.209,
+        "nets": 1696,
+        "nets_annotated": 1694
+      },
+      "power_workload": {
+        "ops": 1000,
+        "cycles": 13002,
+        "cycles_per_op": 13.0
+      },
+      "clock_ns": 2.0,
+      "energy_pj_per_op": 36.15
+    },
+    "booth_d4": {
+      "area_um2": {
+        "synth": 3016.71,
+        "placed": 3280.58,
+        "cts": 3321.54,
+        "routed": 3456.4,
+        "core": 7399.06
+      },
+      "utilization_pct": 46.7,
+      "timing": {
+        "placed": {
+          "setup_wns": -0.00977018,
+          "setup_tns": -0.00977018,
+          "hold_wns": 0.0980198,
+          "hold_tns": 0,
+          "fmax_mhz": 497.6
+        },
+        "cts": {
+          "setup_wns": 0.00126898,
+          "setup_tns": 0,
+          "hold_wns": 0.100399,
+          "hold_tns": 0,
+          "fmax_mhz": 500.3
+        },
+        "routed": {
+          "setup_wns": 0.0324734,
+          "setup_tns": 0,
+          "hold_wns": 0.0999334,
+          "hold_tns": 0,
+          "fmax_mhz": 508.3
+        }
+      },
+      "cts": {
+        "setup_skew_ps": 6.3,
+        "hold_skew_ps": 6.3,
+        "clock_buffers": 19,
+        "clock_inverters": 13,
+        "clock_cell_area_um2": 36.44,
+        "timing_repair_buffers": 448,
+        "timing_repair_area_um2": 381.44,
+        "hold_buffers": 0
+      },
+      "routing": {
+        "wirelength_um": 23503,
+        "vias": 16100,
+        "drc_errors": 0
+      },
+      "congestion": {
+        "total_usage_pct": 19.45,
+        "total_overflow": 0,
+        "busiest_layer": "metal2",
+        "busiest_usage_pct": 48.41,
+        "by_layer_pct": {
+          "metal2": 48.41,
+          "metal3": 40.04,
+          "metal4": 12.66,
+          "metal5": 6.63,
+          "metal6": 1.0
+        }
+      },
+      "metal": {
+        "signal": {
+          "length_um": 22567.4,
+          "area_um2": 1796.33,
+          "by_layer_um2": {
+            "metal2": 622.64,
+            "metal3": 740.47,
+            "metal4": 291.02,
+            "metal5": 123.54,
+            "metal6": 18.68
+          }
+        },
+        "clock": {
+          "length_um": 935.8,
+          "area_um2": 78.86,
+          "by_layer_um2": {
+            "metal2": 24.38,
+            "metal3": 27.78,
+            "metal4": 16.46,
+            "metal5": 10.23
+          }
+        }
+      },
+      "critical_path": {
+        "start": "m[1]$_DFFE_PP_",
+        "end": "h[32]$_SDFFCE_PP0P_",
+        "arrival_ns": 2.04,
+        "clk_to_q_ns": 0.09,
+        "logic_depth": 50,
+        "logic_delay_ns": 1.85,
+        "cell_mix": {
+          "BUF": 7,
+          "HA": 5,
+          "OAI21": 5,
+          "AOI21": 5,
+          "NOR2": 4,
+          "NAND2": 4
+        }
+      },
+      "gate_level_sim": {
+        "x": {
+          "result": "PASS",
+          "checks": 2024,
+          "errors": 0
+        },
+        "1": {
+          "result": "PASS",
+          "checks": 2024,
+          "errors": 0
+        },
+        "0": {
+          "result": "PASS",
+          "checks": 2024,
+          "errors": 0
+        }
+      },
+      "power": {
+        "internal_mw": 1.08,
+        "switching_mw": 0.872,
+        "leakage_uw": 82.2,
+        "total_mw": 2.04,
+        "clock_tree_mw": 0.286,
+        "nets": 2675,
+        "nets_annotated": 2673
+      },
+      "power_workload": {
+        "ops": 1000,
+        "cycles": 9002,
+        "cycles_per_op": 9.0
+      },
+      "clock_ns": 2.0,
+      "energy_pj_per_op": 36.73
+    },
+    "pico_div": {
+      "area_um2": {
+        "synth": 2820.13,
+        "placed": 2865.88,
+        "cts": 2902.06,
+        "routed": 2902.06,
+        "core": 6921.05
+      },
+      "utilization_pct": 41.9,
+      "timing": {
+        "placed": {
+          "setup_wns": 0.957815,
+          "setup_tns": 0,
+          "hold_wns": 0.108454,
+          "hold_tns": 0,
+          "fmax_mhz": 959.5
+        },
+        "cts": {
+          "setup_wns": 1.07106,
+          "setup_tns": 0,
+          "hold_wns": 0.112326,
+          "hold_tns": 0,
+          "fmax_mhz": 1076.5
+        },
+        "routed": {
+          "setup_wns": 1.06854,
+          "setup_tns": 0,
+          "hold_wns": 0.111984,
+          "hold_tns": 0,
+          "fmax_mhz": 1073.6
+        }
+      },
+      "cts": {
+        "setup_skew_ps": 7.9,
+        "hold_skew_ps": 7.9,
+        "clock_buffers": 17,
+        "clock_inverters": 15,
+        "clock_cell_area_um2": 36.18,
+        "timing_repair_buffers": 132,
+        "timing_repair_area_um2": 107.2,
+        "hold_buffers": 0
+      },
+      "routing": {
+        "wirelength_um": 15284,
+        "vias": 11566,
+        "drc_errors": 0
+      },
+      "congestion": {
+        "total_usage_pct": 13.94,
+        "total_overflow": 0,
+        "busiest_layer": "metal2",
+        "busiest_usage_pct": 38.66,
+        "by_layer_pct": {
+          "metal2": 38.66,
+          "metal3": 29.74,
+          "metal4": 5.74,
+          "metal5": 3.25,
+          "metal6": 0.19
+        }
+      },
+      "metal": {
+        "signal": {
+          "length_um": 14248.2,
+          "area_um2": 1063.55,
+          "by_layer_um2": {
+            "metal2": 436.8,
+            "metal3": 494.41,
+            "metal4": 93.94,
+            "metal5": 30.27,
+            "metal6": 8.13
+          }
+        },
+        "clock": {
+          "length_um": 1036.0,
+          "area_um2": 88.67,
+          "by_layer_um2": {
+            "metal2": 31.83,
+            "metal3": 24.54,
+            "metal4": 16.82,
+            "metal5": 15.48
+          }
+        }
+      },
+      "critical_path": {
+        "start": "pcpi_rs1[2]",
+        "end": "dividend[31]$_DFFE_PP_",
+        "arrival_ns": 1.01,
+        "clk_to_q_ns": 0.04,
+        "logic_depth": 9,
+        "logic_delay_ns": 0.57,
+        "cell_mix": {
+          "OR4": 3,
+          "AOI21": 2,
+          "NOR4": 1,
+          "NAND2": 1,
+          "OAI211": 1,
+          "MUX2": 1
+        }
+      },
+      "gate_level_sim": {
+        "x": {
+          "result": "PASS",
+          "checks": 2024,
+          "errors": 0
+        },
+        "1": {
+          "result": "PASS",
+          "checks": 2024,
+          "errors": 0
+        },
+        "0": {
+          "result": "PASS",
+          "checks": 2024,
+          "errors": 0
+        }
+      },
+      "power": {
+        "internal_mw": 0.901,
+        "switching_mw": 0.431,
+        "leakage_uw": 62.2,
+        "total_mw": 1.39,
+        "clock_tree_mw": 0.34,
+        "nets": 2146,
+        "nets_annotated": 2144
+      },
+      "power_workload": {
+        "ops": 1000,
+        "cycles": 39002,
+        "cycles_per_op": 39.0
+      },
+      "clock_ns": 2.0,
+      "energy_pj_per_op": 108.43
+    },
+    "restoring_b1": {
+      "area_um2": {
+        "synth": 1846.84,
+        "placed": 1885.94,
+        "cts": 1905.36,
+        "routed": 1905.36,
+        "core": 4545.41
+      },
+      "utilization_pct": 41.9,
+      "timing": {
+        "placed": {
+          "setup_wns": 0.893872,
+          "setup_tns": 0,
+          "hold_wns": 0.100414,
+          "hold_tns": 0,
+          "fmax_mhz": 904.1
+        },
+        "cts": {
+          "setup_wns": 0.790317,
+          "setup_tns": 0,
+          "hold_wns": 0.104266,
+          "hold_tns": 0,
+          "fmax_mhz": 826.7
+        },
+        "routed": {
+          "setup_wns": 0.785762,
+          "setup_tns": 0,
+          "hold_wns": 0.104067,
+          "hold_tns": 0,
+          "fmax_mhz": 823.6
+        }
+      },
+      "cts": {
+        "setup_skew_ps": 5.4,
+        "hold_skew_ps": 5.4,
+        "clock_buffers": 9,
+        "clock_inverters": 7,
+        "clock_cell_area_um2": 19.42,
+        "timing_repair_buffers": 128,
+        "timing_repair_area_um2": 102.94,
+        "hold_buffers": 0
+      },
+      "routing": {
+        "wirelength_um": 10052,
+        "vias": 7893,
+        "drc_errors": 0
+      },
+      "congestion": {
+        "total_usage_pct": 14.23,
+        "total_overflow": 0,
+        "busiest_layer": "metal2",
+        "busiest_usage_pct": 45.56,
+        "by_layer_pct": {
+          "metal2": 45.56,
+          "metal3": 25.68,
+          "metal4": 7.48,
+          "metal5": 2.4,
+          "metal6": 0.2
+        }
+      },
+      "metal": {
+        "signal": {
+          "length_um": 9348.8,
+          "area_um2": 707.66,
+          "by_layer_um2": {
+            "metal2": 334.34,
+            "metal3": 266.83,
+            "metal4": 88.89,
+            "metal5": 6.78,
+            "metal6": 10.82
+          }
+        },
+        "clock": {
+          "length_um": 703.4,
+          "area_um2": 59.96,
+          "by_layer_um2": {
+            "metal2": 20.92,
+            "metal3": 17.6,
+            "metal4": 11.05,
+            "metal5": 10.39
+          }
+        }
+      },
+      "critical_path": {
+        "start": "want_rem$_DFFE_PP_",
+        "end": "pcpi_rd[30]",
+        "arrival_ns": 0.81,
+        "clk_to_q_ns": 0.19,
+        "logic_depth": 12,
+        "logic_delay_ns": 0.52,
+        "cell_mix": {
+          "INV": 2,
+          "AOI21": 2,
+          "OAI21": 2,
+          "HA": 1,
+          "NOR3": 1,
+          "OAI221": 1
+        }
+      },
+      "gate_level_sim": {
+        "x": {
+          "result": "PASS",
+          "checks": 2024,
+          "errors": 0
+        },
+        "1": {
+          "result": "PASS",
+          "checks": 2024,
+          "errors": 0
+        },
+        "0": {
+          "result": "PASS",
+          "checks": 2024,
+          "errors": 0
+        }
+      },
+      "power": {
+        "internal_mw": 0.535,
+        "switching_mw": 0.293,
+        "leakage_uw": 41.5,
+        "total_mw": 0.87,
+        "clock_tree_mw": 0.191,
+        "nets": 1463,
+        "nets_annotated": 1461
+      },
+      "power_workload": {
+        "ops": 1000,
+        "cycles": 36002,
+        "cycles_per_op": 36.0
+      },
+      "clock_ns": 2.0,
+      "energy_pj_per_op": 62.64
+    },
+    "restoring_b2": {
+      "area_um2": {
+        "synth": 2249.83,
+        "placed": 2268.71,
+        "cts": 2285.74,
+        "routed": 2285.74,
+        "core": 5540.51
+      },
+      "utilization_pct": 41.3,
+      "timing": {
+        "placed": {
+          "setup_wns": 0.612595,
+          "setup_tns": 0,
+          "hold_wns": 0.100626,
+          "hold_tns": 0,
+          "fmax_mhz": 720.8
+        },
+        "cts": {
+          "setup_wns": 0.605832,
+          "setup_tns": 0,
+          "hold_wns": 0.104571,
+          "hold_tns": 0,
+          "fmax_mhz": 717.3
+        },
+        "routed": {
+          "setup_wns": 0.607105,
+          "setup_tns": 0,
+          "hold_wns": 0.104103,
+          "hold_tns": 0,
+          "fmax_mhz": 717.9
+        }
+      },
+      "cts": {
+        "setup_skew_ps": 3.9,
+        "hold_skew_ps": 3.9,
+        "clock_buffers": 10,
+        "clock_inverters": 5,
+        "clock_cell_area_um2": 17.02,
+        "timing_repair_buffers": 133,
+        "timing_repair_area_um2": 106.93,
+        "hold_buffers": 0
+      },
+      "routing": {
+        "wirelength_um": 13874,
+        "vias": 10136,
+        "drc_errors": 0
+      },
+      "congestion": {
+        "total_usage_pct": 15.56,
+        "total_overflow": 0,
+        "busiest_layer": "metal2",
+        "busiest_usage_pct": 43.4,
+        "by_layer_pct": {
+          "metal2": 43.4,
+          "metal3": 31.01,
+          "metal4": 9.02,
+          "metal5": 3.39,
+          "metal6": 0.56
+        }
+      },
+      "metal": {
+        "signal": {
+          "length_um": 13147.3,
+          "area_um2": 1017.67,
+          "by_layer_um2": {
+            "metal2": 412.6,
+            "metal3": 410.35,
+            "metal4": 156.13,
+            "metal5": 19.06,
+            "metal6": 19.52
+          }
+        },
+        "clock": {
+          "length_um": 727.6,
+          "area_um2": 62.75,
+          "by_layer_um2": {
+            "metal2": 21.94,
+            "metal3": 17.17,
+            "metal4": 8.58,
+            "metal5": 15.05
+          }
+        }
+      },
+      "critical_path": {
+        "start": "r[9]$_SDFFCE_PP0P_",
+        "end": "r[10]$_SDFFCE_PP0P_",
+        "arrival_ns": 1.45,
+        "clk_to_q_ns": 0.11,
+        "logic_depth": 22,
+        "logic_delay_ns": 1.24,
+        "cell_mix": {
+          "HA": 2,
+          "NAND2": 2,
+          "AND2": 2,
+          "AOI21": 2,
+          "OAI21": 2,
+          "MUX2": 2
+        }
+      },
+      "gate_level_sim": {
+        "x": {
+          "result": "PASS",
+          "checks": 2024,
+          "errors": 0
+        },
+        "1": {
+          "result": "PASS",
+          "checks": 2024,
+          "errors": 0
+        },
+        "0": {
+          "result": "PASS",
+          "checks": 2024,
+          "errors": 0
+        }
+      },
+      "power": {
+        "internal_mw": 0.613,
+        "switching_mw": 0.388,
+        "leakage_uw": 49.3,
+        "total_mw": 1.05,
+        "clock_tree_mw": 0.175,
+        "nets": 1796,
+        "nets_annotated": 1794
+      },
+      "power_workload": {
+        "ops": 1000,
+        "cycles": 20002,
+        "cycles_per_op": 20.0
+      },
+      "clock_ns": 2.0,
+      "energy_pj_per_op": 42.0
+    },
+    "restoring_b4": {
+      "area_um2": {
+        "synth": 3036.39,
+        "placed": 3660.96,
+        "cts": 3773.21,
+        "routed": 3834.66,
+        "core": 7415.28
+      },
+      "utilization_pct": 51.7,
+      "timing": {
+        "placed": {
+          "setup_wns": -0.238347,
+          "setup_tns": -7.53859,
+          "hold_wns": 0.10059,
+          "hold_tns": 0,
+          "fmax_mhz": 446.8
+        },
+        "cts": {
+          "setup_wns": -0.215823,
+          "setup_tns": -6.67944,
+          "hold_wns": 0.104502,
+          "hold_tns": 0,
+          "fmax_mhz": 451.3
+        },
+        "routed": {
+          "setup_wns": -0.206937,
+          "setup_tns": -6.49644,
+          "hold_wns": 0.104924,
+          "hold_tns": 0,
+          "fmax_mhz": 453.1
+        }
+      },
+      "cts": {
+        "setup_skew_ps": 5.0,
+        "hold_skew_ps": 5.0,
+        "clock_buffers": 10,
+        "clock_inverters": 6,
+        "clock_cell_area_um2": 20.48,
+        "timing_repair_buffers": 832,
+        "timing_repair_area_um2": 728.57,
+        "hold_buffers": 0
+      },
+      "routing": {
+        "wirelength_um": 22647,
+        "vias": 17037,
+        "drc_errors": 0
+      },
+      "congestion": {
+        "total_usage_pct": 19.03,
+        "total_overflow": 0,
+        "busiest_layer": "metal2",
+        "busiest_usage_pct": 48.93,
+        "by_layer_pct": {
+          "metal2": 48.93,
+          "metal3": 38.8,
+          "metal4": 12.37,
+          "metal5": 4.77,
+          "metal6": 1.62
+        }
+      },
+      "metal": {
+        "signal": {
+          "length_um": 21992.9,
+          "area_um2": 1755.9,
+          "by_layer_um2": {
+            "metal2": 615.82,
+            "metal3": 707.29,
+            "metal4": 294.84,
+            "metal5": 108.51,
+            "metal6": 29.44
+          }
+        },
+        "clock": {
+          "length_um": 654.6,
+          "area_um2": 55.06,
+          "by_layer_um2": {
+            "metal2": 20.6,
+            "metal3": 15.97,
+            "metal4": 8.68,
+            "metal5": 4.19,
+            "metal6": 5.61
+          }
+        }
+      },
+      "critical_path": {
+        "start": "r[18]$_SDFFCE_PP0P_",
+        "end": "r[28]$_SDFFCE_PP0P_",
+        "arrival_ns": 2.26,
+        "clk_to_q_ns": 0.09,
+        "logic_depth": 49,
+        "logic_delay_ns": 2.06,
+        "cell_mix": {
+          "BUF": 8,
+          "AOI221": 5,
+          "HA": 4,
+          "OAI21": 4,
+          "AOI21": 4,
+          "INV": 3
+        }
+      },
+      "gate_level_sim": {
+        "x": {
+          "result": "PASS",
+          "checks": 2024,
+          "errors": 0
+        },
+        "1": {
+          "result": "PASS",
+          "checks": 2024,
+          "errors": 0
+        },
+        "0": {
+          "result": "PASS",
+          "checks": 2024,
+          "errors": 0
+        }
+      },
+      "power": {
+        "internal_mw": 0.954,
+        "switching_mw": 0.672,
+        "leakage_uw": 91.8,
+        "total_mw": 1.72,
+        "clock_tree_mw": 0.195,
+        "nets": 3191,
+        "nets_annotated": 3189
+      },
+      "power_workload": {
+        "ops": 1000,
+        "cycles": 12002,
+        "cycles_per_op": 12.0
+      },
+      "clock_ns": 2.0,
+      "energy_pj_per_op": 41.29
+    }
+  },
+  "sky130hd": {
+    "pico_mul": {
+      "area_um2": {
+        "synth": 12434.4,
+        "placed": 14033.5,
+        "cts": 14945.6,
+        "routed": 14948.1,
+        "core": 30589.3
+      },
+      "utilization_pct": 48.9,
+      "timing": {
+        "placed": {
+          "setup_wns": 3.00044,
+          "setup_tns": 0,
+          "hold_wns": 0.35705,
+          "hold_tns": 0,
+          "fmax_mhz": 333.4
+        },
+        "cts": {
+          "setup_wns": 3.3548,
+          "setup_tns": 0,
+          "hold_wns": 0.369731,
+          "hold_tns": 0,
+          "fmax_mhz": 378.0
+        },
+        "routed": {
+          "setup_wns": 3.40068,
+          "setup_tns": 0,
+          "hold_wns": 0.36876,
+          "hold_tns": 0,
+          "fmax_mhz": 384.7
+        }
+      },
+      "cts": {
+        "setup_skew_ps": 12.5,
+        "hold_skew_ps": 12.5,
+        "clock_buffers": 47,
+        "clock_inverters": 6,
+        "clock_cell_area_um2": 912.12,
+        "timing_repair_buffers": 130,
+        "timing_repair_area_um2": 1287.48,
+        "hold_buffers": 0
+      },
+      "routing": {
+        "wirelength_um": 21288,
+        "vias": 6868,
+        "drc_errors": 0
+      },
+      "congestion": {
+        "total_usage_pct": 15.09,
+        "total_overflow": 0,
+        "busiest_layer": "met1",
+        "busiest_usage_pct": 25.08,
+        "by_layer_pct": {
+          "met1": 25.08,
+          "met2": 20.56,
+          "met3": 5.19,
+          "met4": 3.57
+        }
+      },
+      "metal": {
+        "signal": {
+          "length_um": 17752.3,
+          "area_um2": 2706.83,
+          "by_layer_um2": {
+            "met1": 1224.82,
+            "met2": 1086.55,
+            "met3": 366.27,
+            "met4": 1.22,
+            "met5": 27.97
+          }
+        },
+        "clock": {
+          "length_um": 3536.6,
+          "area_um2": 643.73,
+          "by_layer_um2": {
+            "met1": 202.54,
+            "met2": 162.55,
+            "met3": 121.83,
+            "met4": 156.82
+          }
+        }
+      },
+      "critical_path": {
+        "start": "rs1[0]$_DFFE_PP_",
+        "end": "rdx[16]$_SDFFCE_PP0P_",
+        "arrival_ns": 2.86,
+        "clk_to_q_ns": 0.35,
+        "logic_depth": 8,
+        "logic_delay_ns": 1.96,
+        "cell_mix": {
+          "buf": 2,
+          "fa": 2,
+          "and2": 1,
+          "a21o": 1,
+          "a21oi": 1,
+          "nor2": 1
+        }
+      },
+      "gate_level_sim": {
+        "x": {
+          "result": "PASS",
+          "checks": 2024,
+          "errors": 0
+        },
+        "1": {
+          "result": "PASS",
+          "checks": 2024,
+          "errors": 0
+        },
+        "0": {
+          "result": "PASS",
+          "checks": 2024,
+          "errors": 0
+        }
+      },
+      "power": {
+        "internal_mw": 3.17,
+        "switching_mw": 0.844,
+        "leakage_uw": 0.00649,
+        "total_mw": 4.01,
+        "clock_tree_mw": 1.7,
+        "nets": 1163,
+        "nets_annotated": 1161
+      },
+      "power_workload": {
+        "ops": 1000,
+        "cycles": 62778,
+        "cycles_per_op": 62.78
+      },
+      "clock_ns": 6.0,
+      "energy_pj_per_op": 1510.44
+    },
+    "pico_fast_mul": {
+      "area_um2": {
+        "synth": 39535.4,
+        "placed": 45871.5,
+        "cts": 48094.9,
+        "routed": 49044.5,
+        "core": 97278.3
+      },
+      "utilization_pct": 50.4,
+      "timing": {
+        "placed": {
+          "setup_wns": -1.41671,
+          "setup_tns": -47.2489,
+          "hold_wns": 0.493782,
+          "hold_tns": 0,
+          "fmax_mhz": 134.8
+        },
+        "cts": {
+          "setup_wns": -1.30756,
+          "setup_tns": -44.945,
+          "hold_wns": 0.504955,
+          "hold_tns": 0,
+          "fmax_mhz": 136.8
+        },
+        "routed": {
+          "setup_wns": -1.2345,
+          "setup_tns": -45.9439,
+          "hold_wns": 0.498043,
+          "hold_tns": 0,
+          "fmax_mhz": 138.2
+        }
+      },
+      "cts": {
+        "setup_skew_ps": 21.4,
+        "hold_skew_ps": 21.4,
+        "clock_buffers": 18,
+        "clock_inverters": 14,
+        "clock_cell_area_um2": 566.79,
+        "timing_repair_buffers": 636,
+        "timing_repair_area_um2": 6356.1,
+        "hold_buffers": 0
+      },
+      "routing": {
+        "wirelength_um": 111655,
+        "vias": 25446,
+        "drc_errors": 0
+      },
+      "congestion": {
+        "total_usage_pct": 25.38,
+        "total_overflow": 0,
+        "busiest_layer": "met2",
+        "busiest_usage_pct": 39.79,
+        "by_layer_pct": {
+          "met1": 35.76,
+          "met2": 39.79,
+          "met3": 9.55,
+          "met4": 5.0
+        }
+      },
+      "metal": {
+        "signal": {
+          "length_um": 108358.2,
+          "area_um2": 16940.05,
+          "by_layer_um2": {
+            "met1": 6012.2,
+            "met2": 7609.3,
+            "met3": 2619.86,
+            "met4": 698.7
+          }
+        },
+        "clock": {
+          "length_um": 3297.1,
+          "area_um2": 655.56,
+          "by_layer_um2": {
+            "met1": 130.93,
+            "met2": 160.95,
+            "met3": 246.1,
+            "met4": 117.58
+          }
+        }
+      },
+      "critical_path": {
+        "start": "rs1[14]$_DFFE_PP_",
+        "end": "rd[61]$_DFF_P_",
+        "arrival_ns": 7.66,
+        "clk_to_q_ns": 0.38,
+        "logic_depth": 22,
+        "logic_delay_ns": 6.76,
+        "cell_mix": {
+          "fa": 8,
+          "buf": 3,
+          "nand3": 2,
+          "o21ai": 2,
+          "and2": 1,
+          "ha": 1
+        }
+      },
+      "gate_level_sim": {
+        "x": {
+          "result": "PASS",
+          "checks": 2024,
+          "errors": 0
+        },
+        "1": {
+          "result": "PASS",
+          "checks": 2024,
+          "errors": 0
+        },
+        "0": {
+          "result": "PASS",
+          "checks": 2024,
+          "errors": 0
+        }
+      },
+      "power": {
+        "internal_mw": 2.56,
+        "switching_mw": 1.71,
+        "leakage_uw": 0.0217,
+        "total_mw": 4.27,
+        "clock_tree_mw": 1.12,
+        "nets": 5121,
+        "nets_annotated": 5119
+      },
+      "power_workload": {
+        "ops": 1000,
+        "cycles": 5002,
+        "cycles_per_op": 5.0
+      },
+      "clock_ns": 6.0,
+      "energy_pj_per_op": 128.15
+    },
+    "booth_d1": {
+      "area_um2": {
+        "synth": 8460.61,
+        "placed": 9881.98,
+        "cts": 10227.3,
+        "routed": 10227.3,
+        "core": 20494.7
+      },
+      "utilization_pct": 49.9,
+      "timing": {
+        "placed": {
+          "setup_wns": 1.10239,
+          "setup_tns": 0,
+          "hold_wns": 0.520882,
+          "hold_tns": 0,
+          "fmax_mhz": 204.2
+        },
+        "cts": {
+          "setup_wns": 1.10238,
+          "setup_tns": 0,
+          "hold_wns": 0.536763,
+          "hold_tns": 0,
+          "fmax_mhz": 204.2
+        },
+        "routed": {
+          "setup_wns": 1.07955,
+          "setup_tns": 0,
+          "hold_wns": 0.525565,
+          "hold_tns": 0,
+          "fmax_mhz": 203.2
+        }
+      },
+      "cts": {
+        "setup_skew_ps": 11.2,
+        "hold_skew_ps": 11.2,
+        "clock_buffers": 10,
+        "clock_inverters": 6,
+        "clock_cell_area_um2": 345.33,
+        "timing_repair_buffers": 133,
+        "timing_repair_area_um2": 1293.74,
+        "hold_buffers": 0
+      },
+      "routing": {
+        "wirelength_um": 22717,
+        "vias": 7543,
+        "drc_errors": 0
+      },
+      "congestion": {
+        "total_usage_pct": 22.85,
+        "total_overflow": 0,
+        "busiest_layer": "met1",
+        "busiest_usage_pct": 35.04,
+        "by_layer_pct": {
+          "met1": 35.04,
+          "met2": 33.7,
+          "met3": 4.79,
+          "met4": 7.37
+        }
+      },
+      "metal": {
+        "signal": {
+          "length_um": 21166.5,
+          "area_um2": 3232.55,
+          "by_layer_um2": {
+            "met1": 1383.9,
+            "met2": 1343.83,
+            "met3": 371.54,
+            "met4": 133.28
+          }
+        },
+        "clock": {
+          "length_um": 1550.5,
+          "area_um2": 276.07,
+          "by_layer_um2": {
+            "met1": 82.22,
+            "met2": 83.22,
+            "met3": 61.12,
+            "met4": 49.51
+          }
+        }
+      },
+      "critical_path": {
+        "start": "m[13]$_DFFE_PP_",
+        "end": "h[31]$_SDFFCE_PP0P_",
+        "arrival_ns": 5.15,
+        "clk_to_q_ns": 0.51,
+        "logic_depth": 15,
+        "logic_delay_ns": 4.29,
+        "cell_mix": {
+          "nand2": 3,
+          "nor4": 2,
+          "or4": 1,
+          "and2": 1,
+          "xor2": 1,
+          "a211oi": 1
+        }
+      },
+      "gate_level_sim": {
+        "x": {
+          "result": "PASS",
+          "checks": 2024,
+          "errors": 0
+        },
+        "1": {
+          "result": "PASS",
+          "checks": 2024,
+          "errors": 0
+        },
+        "0": {
+          "result": "PASS",
+          "checks": 2024,
+          "errors": 0
+        }
+      },
+      "power": {
+        "internal_mw": 1.74,
+        "switching_mw": 0.827,
+        "leakage_uw": 0.00394,
+        "total_mw": 2.57,
+        "clock_tree_mw": 0.709,
+        "nets": 1195,
+        "nets_annotated": 1193
+      },
+      "power_workload": {
+        "ops": 1000,
+        "cycles": 21002,
+        "cycles_per_op": 21.0
+      },
+      "clock_ns": 6.0,
+      "energy_pj_per_op": 323.85
+    },
+    "booth_d2": {
+      "area_um2": {
+        "synth": 11432.2,
+        "placed": 14501.4,
+        "cts": 15087,
+        "routed": 15436.1,
+        "core": 27934.3
+      },
+      "utilization_pct": 55.3,
+      "timing": {
+        "placed": {
+          "setup_wns": -0.43975,
+          "setup_tns": -3.60985,
+          "hold_wns": 0.517215,
+          "hold_tns": 0,
+          "fmax_mhz": 155.3
+        },
+        "cts": {
+          "setup_wns": -0.304501,
+          "setup_tns": -0.96813,
+          "hold_wns": 0.533363,
+          "hold_tns": 0,
+          "fmax_mhz": 158.6
+        },
+        "routed": {
+          "setup_wns": -0.330086,
+          "setup_tns": -1.46479,
+          "hold_wns": 0.528299,
+          "hold_tns": 0,
+          "fmax_mhz": 158.0
+        }
+      },
+      "cts": {
+        "setup_skew_ps": 20.0,
+        "hold_skew_ps": 20.0,
+        "clock_buffers": 9,
+        "clock_inverters": 7,
+        "clock_cell_area_um2": 314.05,
+        "timing_repair_buffers": 379,
+        "timing_repair_area_um2": 3180.55,
+        "hold_buffers": 0
+      },
+      "routing": {
+        "wirelength_um": 38162,
+        "vias": 11554,
+        "drc_errors": 0
+      },
+      "congestion": {
+        "total_usage_pct": 27.81,
+        "total_overflow": 0,
+        "busiest_layer": "met2",
+        "busiest_usage_pct": 43.81,
+        "by_layer_pct": {
+          "met1": 39.36,
+          "met2": 43.81,
+          "met3": 3.79,
+          "met4": 11.65
+        }
+      },
+      "metal": {
+        "signal": {
+          "length_um": 36406.9,
+          "area_um2": 5577.43,
+          "by_layer_um2": {
+            "met1": 2273.05,
+            "met2": 2403.51,
+            "met3": 495.31,
+            "met4": 405.55
+          }
+        },
+        "clock": {
+          "length_um": 1755.7,
+          "area_um2": 326.35,
+          "by_layer_um2": {
+            "met1": 85.82,
+            "met2": 89.5,
+            "met3": 71.46,
+            "met4": 79.56
+          }
+        }
+      },
+      "critical_path": {
+        "start": "m[1]$_DFFE_PP_",
+        "end": "h[34]$_SDFFCE_PP0P_",
+        "arrival_ns": 6.57,
+        "clk_to_q_ns": 0.4,
+        "logic_depth": 25,
+        "logic_delay_ns": 5.78,
+        "cell_mix": {
+          "a21o": 4,
+          "ha": 3,
+          "nand2": 2,
+          "or4": 2,
+          "or3": 2,
+          "xor2": 2
+        }
+      },
+      "gate_level_sim": {
+        "x": {
+          "result": "PASS",
+          "checks": 2024,
+          "errors": 0
+        },
+        "1": {
+          "result": "PASS",
+          "checks": 2024,
+          "errors": 0
+        },
+        "0": {
+          "result": "PASS",
+          "checks": 2024,
+          "errors": 0
+        }
+      },
+      "power": {
+        "internal_mw": 2.01,
+        "switching_mw": 1.28,
+        "leakage_uw": 0.00644,
+        "total_mw": 3.29,
+        "clock_tree_mw": 0.654,
+        "nets": 1863,
+        "nets_annotated": 1861
+      },
+      "power_workload": {
+        "ops": 1000,
+        "cycles": 13002,
+        "cycles_per_op": 13.0
+      },
+      "clock_ns": 6.0,
+      "energy_pj_per_op": 256.66
+    },
+    "booth_d4": {
+      "area_um2": {
+        "synth": 17372.9,
+        "placed": 23900.4,
+        "cts": 25604.6,
+        "routed": 26366.5,
+        "core": 42415.7
+      },
+      "utilization_pct": 62.2,
+      "timing": {
+        "placed": {
+          "setup_wns": -4.15922,
+          "setup_tns": -89.4253,
+          "hold_wns": 0.531504,
+          "hold_tns": 0,
+          "fmax_mhz": 98.4
+        },
+        "cts": {
+          "setup_wns": -3.7409,
+          "setup_tns": -79.2371,
+          "hold_wns": 0.545648,
+          "hold_tns": 0,
+          "fmax_mhz": 102.7
+        },
+        "routed": {
+          "setup_wns": -3.89239,
+          "setup_tns": -86.0285,
+          "hold_wns": 0.545315,
+          "hold_tns": 0,
+          "fmax_mhz": 101.1
+        }
+      },
+      "cts": {
+        "setup_skew_ps": 17.8,
+        "hold_skew_ps": 17.8,
+        "clock_buffers": 17,
+        "clock_inverters": 15,
+        "clock_cell_area_um2": 620.6,
+        "timing_repair_buffers": 859,
+        "timing_repair_area_um2": 6885.35,
+        "hold_buffers": 0
+      },
+      "routing": {
+        "wirelength_um": 80062,
+        "vias": 21164,
+        "drc_errors": 0
+      },
+      "congestion": {
+        "total_usage_pct": 37.47,
+        "total_overflow": 0,
+        "busiest_layer": "met2",
+        "busiest_usage_pct": 58.06,
+        "by_layer_pct": {
+          "met1": 48.36,
+          "met2": 58.06,
+          "met3": 7.08,
+          "met4": 24.81
+        }
+      },
+      "metal": {
+        "signal": {
+          "length_um": 77911.1,
+          "area_um2": 12663.89,
+          "by_layer_um2": {
+            "met1": 4402.74,
+            "met2": 4968.03,
+            "met3": 1602.49,
+            "met4": 1690.63
+          }
+        },
+        "clock": {
+          "length_um": 2151.2,
+          "area_um2": 440.59,
+          "by_layer_um2": {
+            "met1": 94.46,
+            "met2": 84.71,
+            "met3": 137.18,
+            "met4": 124.24
+          }
+        }
+      },
+      "critical_path": {
+        "start": "m[1]$_DFFE_PP_",
+        "end": "h[34]$_SDFFCE_PP0P_",
+        "arrival_ns": 10.12,
+        "clk_to_q_ns": 0.43,
+        "logic_depth": 47,
+        "logic_delay_ns": 9.21,
+        "cell_mix": {
+          "ha": 5,
+          "o21ai": 5,
+          "xnor2": 3,
+          "buf": 3,
+          "a31oi": 3,
+          "a21oi": 2
+        }
+      },
+      "gate_level_sim": {
+        "x": {
+          "result": "PASS",
+          "checks": 2024,
+          "errors": 0
+        },
+        "1": {
+          "result": "PASS",
+          "checks": 2024,
+          "errors": 0
+        },
+        "0": {
+          "result": "PASS",
+          "checks": 2024,
+          "errors": 0
+        }
+      },
+      "power": {
+        "internal_mw": 3.11,
+        "switching_mw": 2.25,
+        "leakage_uw": 0.0119,
+        "total_mw": 5.36,
+        "clock_tree_mw": 1.11,
+        "nets": 3282,
+        "nets_annotated": 3280
+      },
+      "power_workload": {
+        "ops": 1000,
+        "cycles": 9002,
+        "cycles_per_op": 9.0
+      },
+      "clock_ns": 6.0,
+      "energy_pj_per_op": 289.5
+    },
+    "pico_div": {
+      "area_um2": {
+        "synth": 13211.4,
+        "placed": 14805.4,
+        "cts": 15444.8,
+        "routed": 15444.8,
+        "core": 32536.2
+      },
+      "utilization_pct": 47.5,
+      "timing": {
+        "placed": {
+          "setup_wns": 1.98766,
+          "setup_tns": 0,
+          "hold_wns": 0.472692,
+          "hold_tns": 0,
+          "fmax_mhz": 249.2
+        },
+        "cts": {
+          "setup_wns": 2.28085,
+          "setup_tns": 0,
+          "hold_wns": 0.490929,
+          "hold_tns": 0,
+          "fmax_mhz": 268.9
+        },
+        "routed": {
+          "setup_wns": 2.33986,
+          "setup_tns": 0,
+          "hold_wns": 0.494602,
+          "hold_tns": 0,
+          "fmax_mhz": 273.2
+        }
+      },
+      "cts": {
+        "setup_skew_ps": 16.6,
+        "hold_skew_ps": 16.6,
+        "clock_buffers": 17,
+        "clock_inverters": 15,
+        "clock_cell_area_um2": 639.36,
+        "timing_repair_buffers": 129,
+        "timing_repair_area_um2": 1263.71,
+        "hold_buffers": 0
+      },
+      "routing": {
+        "wirelength_um": 32619,
+        "vias": 10544,
+        "drc_errors": 1
+      },
+      "congestion": {
+        "total_usage_pct": 21.17,
+        "total_overflow": 0,
+        "busiest_layer": "met2",
+        "busiest_usage_pct": 33.62,
+        "by_layer_pct": {
+          "met1": 30.68,
+          "met2": 33.62,
+          "met3": 5.03,
+          "met4": 4.47
+        }
+      },
+      "metal": {
+        "signal": {
+          "length_um": 30096.7,
+          "area_um2": 4526.08,
+          "by_layer_um2": {
+            "met1": 1926.68,
+            "met2": 2013.39,
+            "met3": 487.89,
+            "met4": 98.12
+          }
+        },
+        "clock": {
+          "length_um": 2522.8,
+          "area_um2": 419.8,
+          "by_layer_um2": {
+            "met1": 155.16,
+            "met2": 139.76,
+            "met3": 85.92,
+            "met4": 38.96
+          }
+        }
+      },
+      "critical_path": {
+        "start": "dividend[0]$_DFFE_PP_",
+        "end": "dividend[24]$_DFFE_PP_",
+        "arrival_ns": 3.94,
+        "clk_to_q_ns": 0.43,
+        "logic_depth": 10,
+        "logic_delay_ns": 3.06,
+        "cell_mix": {
+          "inv": 1,
+          "ha": 1,
+          "fa": 1,
+          "nor2b": 1,
+          "o2111ai": 1,
+          "a21boi": 1
+        }
+      },
+      "gate_level_sim": {
+        "x": {
+          "result": "PASS",
+          "checks": 2024,
+          "errors": 0
+        },
+        "1": {
+          "result": "PASS",
+          "checks": 2024,
+          "errors": 0
+        },
+        "0": {
+          "result": "PASS",
+          "checks": 2024,
+          "errors": 0
+        }
+      },
+      "power": {
+        "internal_mw": 2.37,
+        "switching_mw": 0.933,
+        "leakage_uw": 0.00629,
+        "total_mw": 3.31,
+        "clock_tree_mw": 1.24,
+        "nets": 1708,
+        "nets_annotated": 1706
+      },
+      "power_workload": {
+        "ops": 1000,
+        "cycles": 39002,
+        "cycles_per_op": 39.0
+      },
+      "clock_ns": 6.0,
+      "energy_pj_per_op": 774.58
+    },
+    "restoring_b1": {
+      "area_um2": {
+        "synth": 8715.86,
+        "placed": 10118.5,
+        "cts": 10391.2,
+        "routed": 10391.2,
+        "core": 21220.4
+      },
+      "utilization_pct": 49.0,
+      "timing": {
+        "placed": {
+          "setup_wns": 1.70645,
+          "setup_tns": 0,
+          "hold_wns": 0.498781,
+          "hold_tns": 0,
+          "fmax_mhz": 232.9
+        },
+        "cts": {
+          "setup_wns": 1.31135,
+          "setup_tns": 0,
+          "hold_wns": 0.521384,
+          "hold_tns": 0,
+          "fmax_mhz": 213.3
+        },
+        "routed": {
+          "setup_wns": 1.32924,
+          "setup_tns": 0,
+          "hold_wns": 0.517683,
+          "hold_tns": 0,
+          "fmax_mhz": 214.1
+        }
+      },
+      "cts": {
+        "setup_skew_ps": 7.0,
+        "hold_skew_ps": 7.0,
+        "clock_buffers": 12,
+        "clock_inverters": 4,
+        "clock_cell_area_um2": 272.76,
+        "timing_repair_buffers": 130,
+        "timing_repair_area_um2": 1271.22,
+        "hold_buffers": 0
+      },
+      "routing": {
+        "wirelength_um": 21737,
+        "vias": 7496,
+        "drc_errors": 0
+      },
+      "congestion": {
+        "total_usage_pct": 21.16,
+        "total_overflow": 0,
+        "busiest_layer": "met2",
+        "busiest_usage_pct": 34.61,
+        "by_layer_pct": {
+          "met1": 29.87,
+          "met2": 34.61,
+          "met3": 4.72,
+          "met4": 4.03
+        }
+      },
+      "metal": {
+        "signal": {
+          "length_um": 20196.6,
+          "area_um2": 2991.68,
+          "by_layer_um2": {
+            "met1": 1257.07,
+            "met2": 1426.82,
+            "met3": 251.28,
+            "met4": 56.51
+          }
+        },
+        "clock": {
+          "length_um": 1540.8,
+          "area_um2": 268.4,
+          "by_layer_um2": {
+            "met1": 87.59,
+            "met2": 82.02,
+            "met3": 72.48,
+            "met4": 26.32
+          }
+        }
+      },
+      "critical_path": {
+        "start": "want_rem$_DFFE_PP_",
+        "end": "pcpi_rd[31]",
+        "arrival_ns": 3.47,
+        "clk_to_q_ns": 0.33,
+        "logic_depth": 10,
+        "logic_delay_ns": 2.76,
+        "cell_mix": {
+          "buf": 1,
+          "mux2i": 1,
+          "o211ai": 1,
+          "nor3": 1,
+          "o21ai": 1,
+          "or3": 1
+        }
+      },
+      "gate_level_sim": {
+        "x": {
+          "result": "PASS",
+          "checks": 2024,
+          "errors": 0
+        },
+        "1": {
+          "result": "PASS",
+          "checks": 2024,
+          "errors": 0
+        },
+        "0": {
+          "result": "PASS",
+          "checks": 2024,
+          "errors": 0
+        }
+      },
+      "power": {
+        "internal_mw": 1.38,
+        "switching_mw": 0.548,
+        "leakage_uw": 0.00415,
+        "total_mw": 1.93,
+        "clock_tree_mw": 0.575,
+        "nets": 1228,
+        "nets_annotated": 1226
+      },
+      "power_workload": {
+        "ops": 1000,
+        "cycles": 36002,
+        "cycles_per_op": 36.0
+      },
+      "clock_ns": 6.0,
+      "energy_pj_per_op": 416.9
+    },
+    "restoring_b2": {
+      "area_um2": {
+        "synth": 10279.9,
+        "placed": 12249.2,
+        "cts": 12565.8,
+        "routed": 12642.1,
+        "core": 25181.7
+      },
+      "utilization_pct": 50.2,
+      "timing": {
+        "placed": {
+          "setup_wns": 0.124808,
+          "setup_tns": 0,
+          "hold_wns": 0.496659,
+          "hold_tns": 0,
+          "fmax_mhz": 170.2
+        },
+        "cts": {
+          "setup_wns": 0.0929647,
+          "setup_tns": 0,
+          "hold_wns": 0.518497,
+          "hold_tns": 0,
+          "fmax_mhz": 169.3
+        },
+        "routed": {
+          "setup_wns": 0.287484,
+          "setup_tns": 0,
+          "hold_wns": 0.518988,
+          "hold_tns": 0,
+          "fmax_mhz": 175.1
+        }
+      },
+      "cts": {
+        "setup_skew_ps": 8.9,
+        "hold_skew_ps": 8.9,
+        "clock_buffers": 9,
+        "clock_inverters": 7,
+        "clock_cell_area_um2": 316.55,
+        "timing_repair_buffers": 196,
+        "timing_repair_area_um2": 1802.98,
+        "hold_buffers": 0
+      },
+      "routing": {
+        "wirelength_um": 27939,
+        "vias": 9083,
+        "drc_errors": 0
+      },
+      "congestion": {
+        "total_usage_pct": 22.51,
+        "total_overflow": 0,
+        "busiest_layer": "met1",
+        "busiest_usage_pct": 34.39,
+        "by_layer_pct": {
+          "met1": 34.39,
+          "met2": 33.74,
+          "met3": 6.12,
+          "met4": 2.53
+        }
+      },
+      "metal": {
+        "signal": {
+          "length_um": 26411.6,
+          "area_um2": 3999.0,
+          "by_layer_um2": {
+            "met1": 1749.29,
+            "met2": 1684.62,
+            "met3": 541.22,
+            "met4": 23.87
+          }
+        },
+        "clock": {
+          "length_um": 1528.1,
+          "area_um2": 271.28,
+          "by_layer_um2": {
+            "met1": 86.86,
+            "met2": 76.9,
+            "met3": 80.38,
+            "met4": 27.13
+          }
+        }
+      },
+      "critical_path": {
+        "start": "r[0]$_SDFFCE_PP0P_",
+        "end": "r[24]$_SDFFCE_PP0P_",
+        "arrival_ns": 5.83,
+        "clk_to_q_ns": 0.47,
+        "logic_depth": 23,
+        "logic_delay_ns": 4.96,
+        "cell_mix": {
+          "buf": 3,
+          "ha": 2,
+          "o31a": 2,
+          "a211oi": 2,
+          "nor2b": 1,
+          "o2111ai": 1
+        }
+      },
+      "gate_level_sim": {
+        "x": {
+          "result": "PASS",
+          "checks": 2024,
+          "errors": 0
+        },
+        "1": {
+          "result": "PASS",
+          "checks": 2024,
+          "errors": 0
+        },
+        "0": {
+          "result": "PASS",
+          "checks": 2024,
+          "errors": 0
+        }
+      },
+      "power": {
+        "internal_mw": 1.58,
+        "switching_mw": 0.734,
+        "leakage_uw": 0.00518,
+        "total_mw": 2.31,
+        "clock_tree_mw": 0.648,
+        "nets": 1506,
+        "nets_annotated": 1504
+      },
+      "power_workload": {
+        "ops": 1000,
+        "cycles": 20002,
+        "cycles_per_op": 20.0
+      },
+      "clock_ns": 6.0,
+      "energy_pj_per_op": 277.23
+    },
+    "restoring_b4": {
+      "area_um2": {
+        "synth": 14286.2,
+        "placed": 19842.8,
+        "cts": 21707.1,
+        "routed": 22461.5,
+        "core": 34883.5
+      },
+      "utilization_pct": 64.4,
+      "timing": {
+        "placed": {
+          "setup_wns": -4.60833,
+          "setup_tns": -148.454,
+          "hold_wns": 0.501336,
+          "hold_tns": 0,
+          "fmax_mhz": 94.3
+        },
+        "cts": {
+          "setup_wns": -3.84883,
+          "setup_tns": -126.735,
+          "hold_wns": 0.512496,
+          "hold_tns": 0,
+          "fmax_mhz": 101.5
+        },
+        "routed": {
+          "setup_wns": -3.97937,
+          "setup_tns": -131.021,
+          "hold_wns": 0.509487,
+          "hold_tns": 0,
+          "fmax_mhz": 100.2
+        }
+      },
+      "cts": {
+        "setup_skew_ps": 15.9,
+        "hold_skew_ps": 15.9,
+        "clock_buffers": 10,
+        "clock_inverters": 6,
+        "clock_cell_area_um2": 289.03,
+        "timing_repair_buffers": 722,
+        "timing_repair_area_um2": 6019.52,
+        "hold_buffers": 0
+      },
+      "routing": {
+        "wirelength_um": 54158,
+        "vias": 15589,
+        "drc_errors": 0
+      },
+      "congestion": {
+        "total_usage_pct": 30.26,
+        "total_overflow": 0,
+        "busiest_layer": "met2",
+        "busiest_usage_pct": 47.2,
+        "by_layer_pct": {
+          "met1": 42.66,
+          "met2": 47.2,
+          "met3": 4.42,
+          "met4": 12.65
+        }
+      },
+      "metal": {
+        "signal": {
+          "length_um": 52664.9,
+          "area_um2": 8179.73,
+          "by_layer_um2": {
+            "met1": 3317.15,
+            "met2": 3350.11,
+            "met3": 796.02,
+            "met4": 716.45
+          }
+        },
+        "clock": {
+          "length_um": 1494.1,
+          "area_um2": 273.4,
+          "by_layer_um2": {
+            "met1": 82.88,
+            "met2": 70.09,
+            "met3": 63.23,
+            "met4": 57.19
+          }
+        }
+      },
+      "critical_path": {
+        "start": "d[27]$_DFFE_PP_",
+        "end": "r[22]$_SDFFCE_PP0P_",
+        "arrival_ns": 10.11,
+        "clk_to_q_ns": 0.56,
+        "logic_depth": 49,
+        "logic_delay_ns": 9.16,
+        "cell_mix": {
+          "buf": 9,
+          "ha": 4,
+          "nand2": 4,
+          "a21oi": 4,
+          "a21o": 3,
+          "o31ai": 3
+        }
+      },
+      "gate_level_sim": {
+        "x": {
+          "result": "PASS",
+          "checks": 2024,
+          "errors": 0
+        },
+        "1": {
+          "result": "PASS",
+          "checks": 2024,
+          "errors": 0
+        },
+        "0": {
+          "result": "PASS",
+          "checks": 2024,
+          "errors": 0
+        }
+      },
+      "power": {
+        "internal_mw": 2.15,
+        "switching_mw": 1.26,
+        "leakage_uw": 0.0102,
+        "total_mw": 3.41,
+        "clock_tree_mw": 0.6,
+        "nets": 2621,
+        "nets_annotated": 2619
+      },
+      "power_workload": {
+        "ops": 1000,
+        "cycles": 12002,
+        "cycles_per_op": 12.0
+      },
+      "clock_ns": 6.0,
+      "energy_pj_per_op": 245.56
+    }
+  }
+}

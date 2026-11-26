@@ -1,11 +1,17 @@
 #!/usr/bin/env python3
 """RTL-to-GDS of every M unit with OpenROAD-flow-scripts on two PDKs.
 
-All units in one PDK get the same clock target and floorplan settings; the
-achieved critical-path delay is (T - WNS), so Fmax = 1/(T - WNS) whether the
-target was met or not. Area is placed standard-cell area after the final
-(finish) stage. Area-delay product (ADP) = area x time per operation, where
-time per operation = latency_cycles x (T - WNS).
+Every unit is implemented at seven clock targets per PDK (same floorplan settings
+for all). For each run the achieved critical-path delay is (T - WNS), so
+Fmax = 1/(T - WNS) whether the target was met or not; area is the standard-cell
+area after the final (finish) stage. Area-delay product (ADP) = area x time per
+operation, with time per operation = latency_cycles x (T - WNS).
+
+Two views are reported:
+  * common target  - all units at the same clock target (PDKS), the like-for-like
+                     comparison used for the detailed sign-off metrics;
+  * best ADP       - each unit at the target that gives its lowest ADP, i.e. each
+                     architecture at its own best operating point.
 
 Writes results/orfs.json and results/orfs.md.
 """
@@ -33,8 +39,15 @@ UNITS = {
     "restoring_b2":  ("pcpi_div_restoring",     {"BITS": 2},    (17, 17)),
     "restoring_b4":  ("pcpi_div_restoring",     {"BITS": 4},    (9, 9)),
 }
-# clock target per PDK (ns), chosen so most units are near their limit
+# common clock target per PDK (ns) and the full sweep
 PDKS = {"nangate45": 2.0, "sky130hd": 6.0}
+SWEEP = {"nangate45": [0.35, 0.5, 0.7, 1.0, 1.5, 2.0, 2.5], "sky130hd": [1.5, 2.0, 2.5, 3.5, 4.5, 6.0, 9.0]}
+
+
+def workdir(pdk, name, period):
+    """Common-target runs keep the plain name; other targets get a _T suffix."""
+    tag = name if period == PDKS[pdk] else f"{name}_T{period:g}"
+    return ROOT / "build/orfs" / pdk / tag
 
 SDC = """current_design {top}
 set clk_period {period}
@@ -61,18 +74,18 @@ export NUM_CORES = {cores}
 
 
 def run(job):
-    name, pdk = job
+    name, pdk, period = job
     top, params, _ = UNITS[name]
-    work = ROOT / "build/orfs" / pdk / name
+    work = workdir(pdk, name, period)
     metrics = work / "metrics.json"
     if metrics.exists():
         return job, work
     work.mkdir(parents=True, exist_ok=True)
-    (work / "constraint.sdc").write_text(SDC.format(top=top, period=PDKS[pdk]))
+    (work / "constraint.sdc").write_text(SDC.format(top=top, period=period))
     files = " ".join(str(ROOT / f) for f in ("third_party/picorv32/picorv32.v",
                                              "rtl/pcpi_mul_booth.v", "rtl/pcpi_div_restoring.v"))
     (work / "config.mk").write_text(CONFIG.format(
-        top=top, name=name, pdk=pdk, files=files, sdc=work / "constraint.sdc",
+        top=top, name=work.name, pdk=pdk, files=files, sdc=work / "constraint.sdc",
         params=" ".join(f"{k} {v}" for k, v in params.items()), cores=CORES_PER_JOB))
     cmd = (f"source {ORFS}/env.sh >/dev/null; "
            f"make -C {ORFS}/flow DESIGN_CONFIG={work}/config.mk WORK_HOME={work} "
@@ -90,49 +103,76 @@ def run(job):
     return job, work
 
 
+def summarize(name, pdk, period, work):
+    m = json.loads((work / "metrics.json").read_text())
+    wns = m.get("finish__timing__setup__ws", 0.0)
+    delay = period - wns
+    lat = UNITS[name][2][0]
+    area = m["finish__design__instance__area"]
+    return {"clock_target_ns": period, "wns_ns": round(wns, 4), "crit_delay_ns": round(delay, 4),
+            "fmax_mhz": round(1000 / delay, 1), "area_um2": round(area, 1),
+            "stdcells": m.get("finish__design__instance__count__stdcell"),
+            "latency_cycles": lat, "latency_mulh_cycles": UNITS[name][2][1],
+            "op_time_ns": round(lat * delay, 2), "adp_um2_ns": round(area * lat * delay, 0),
+            "drc_errors": m.get("detailedroute__route__drc_errors")}
+
+
 def main():
-    jobs = [(n, p) for p in PDKS for n in UNITS]
+    jobs = [(n, p, t) for p in PDKS for t in SWEEP[p] for n in UNITS]
+    # longest-first keeps the pool busy
+    jobs.sort(key=lambda j: (j[2] != PDKS[j[1]], j[1] == "nangate45", j[2]))
     with ThreadPoolExecutor(max_workers=JOBS) as ex:
         done = list(ex.map(run, jobs))
 
-    res = {}
-    for (name, pdk), work in done:
-        mf = work / "metrics.json"
-        if not mf.exists():
-            print(f"FAILED {pdk}/{name}: see {work}/make.log")
+    res, failed = {}, []
+    for (name, pdk, period), work in done:
+        if not (work / "metrics.json").exists():
+            failed.append(f"{pdk}/{work.name}")
             continue
-        m = json.loads(mf.read_text())
-        T = PDKS[pdk]
-        wns = m.get("finish__timing__setup__ws", 0.0)
-        delay = T - wns
-        lat = UNITS[name][2][0]
-        area = m["finish__design__instance__area"]
-        res.setdefault(pdk, {})[name] = {
-            "clock_target_ns": T, "wns_ns": round(wns, 4), "crit_delay_ns": round(delay, 4),
-            "fmax_mhz": round(1000 / delay, 1), "area_um2": round(area, 1),
-            "stdcells": m.get("finish__design__instance__count__stdcell"),
-            "power_mw": round(1000 * m.get("finish__power__total", 0), 3),
-            "latency_cycles": lat, "op_time_ns": round(lat * delay, 2),
-            "adp_um2_ns": round(area * lat * delay, 0),
-            "drc_errors": m.get("detailedroute__route__drc_errors"),
-        }
+        r = res.setdefault(pdk, {}).setdefault(name, {"runs": []})
+        r["runs"].append(summarize(name, pdk, period, work))
+    for pdk, units in res.items():
+        for name, r in units.items():
+            r["runs"].sort(key=lambda x: x["clock_target_ns"])
+            r["common"] = next((x for x in r["runs"] if x["clock_target_ns"] == PDKS[pdk]), None)
+            r["best_adp"] = min(r["runs"], key=lambda x: x["adp_um2_ns"])
+            r["best_fmax"] = max(r["runs"], key=lambda x: x["fmax_mhz"])
     out = ROOT / "results"
     out.mkdir(exist_ok=True)
     (out / "orfs.json").write_text(json.dumps(res, indent=2))
+
     lines = []
     for pdk in PDKS:
-        lines += [f"### {pdk} (target {PDKS[pdk]} ns)", "",
-                  "| unit | area (um^2) | cells | Fmax (MHz) | latency | op time (ns) | ADP (um^2*ns) | power (mW) |",
+        u = res.get(pdk, {})
+        lines += [f"## {pdk}", "",
+                  f"### Common clock target ({PDKS[pdk]} ns), all units", "",
+                  "| unit | area (µm²) | cells | WNS (ns) | Fmax (MHz) | latency | time/op (ns) | ADP (µm²·ns) |",
                   "|---|---:|---:|---:|---:|---:|---:|---:|"]
         for n in UNITS:
-            r = res.get(pdk, {}).get(n)
+            r = u.get(n, {}).get("common")
             if r:
-                lines.append(f"| {n} | {r['area_um2']} | {r['stdcells']} | {r['fmax_mhz']} | {r['latency_cycles']} | "
-                             f"{r['op_time_ns']} | {r['adp_um2_ns']:.0f} | {r['power_mw']} |")
+                lines.append(f"| {n} | {r['area_um2']} | {r['stdcells']} | {r['wns_ns']:+.3f} | {r['fmax_mhz']} | "
+                             f"{r['latency_cycles']} | {r['op_time_ns']} | {r['adp_um2_ns']:.0f} |")
+        lines += ["", f"### Each unit at its best-ADP clock target (sweep {SWEEP[pdk]} ns)", "",
+                  "| unit | best target (ns) | area (µm²) | Fmax (MHz) | time/op (ns) | ADP (µm²·ns) | highest Fmax in sweep (MHz) |",
+                  "|---|---:|---:|---:|---:|---:|---:|"]
+        for n in UNITS:
+            if n in u:
+                b, f = u[n]["best_adp"], u[n]["best_fmax"]
+                lines.append(f"| {n} | {b['clock_target_ns']} | {b['area_um2']} | {b['fmax_mhz']} | {b['op_time_ns']} | "
+                             f"{b['adp_um2_ns']:.0f} | {f['fmax_mhz']} (at {f['clock_target_ns']} ns, {f['area_um2']} µm²) |")
+        lines += ["", "### All runs", "", "| unit | target (ns) | area (µm²) | WNS (ns) | Fmax (MHz) | ADP (µm²·ns) |",
+                  "|---|---:|---:|---:|---:|---:|"]
+        for n in UNITS:
+            for r in u.get(n, {}).get("runs", []):
+                lines.append(f"| {n} | {r['clock_target_ns']} | {r['area_um2']} | {r['wns_ns']:+.3f} | "
+                             f"{r['fmax_mhz']} | {r['adp_um2_ns']:.0f} |")
         lines.append("")
+    if failed:
+        lines += ["Failed runs: " + ", ".join(failed), ""]
     (out / "orfs.md").write_text("\n".join(lines))
     print("\n".join(lines))
-    return 0 if all(len(res.get(p, {})) == len(UNITS) for p in PDKS) else 1
+    return 0 if not failed else 1
 
 
 if __name__ == "__main__":

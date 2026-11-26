@@ -13,6 +13,14 @@
 `timescale 1ns/1ps
 `default_nettype none
 
+// Gate-level simulation (+define+GLS): the routed netlist has its parameters
+// already applied, so the parameter override must be left out.
+`ifdef GLS
+  `define UNIT_PARAMS(name)
+`else
+  `define UNIT_PARAMS(name) #(.name(P))
+`endif
+
 module tb_unit;
 	parameter UNIT = 2;
 	parameter P = 1;
@@ -38,7 +46,7 @@ module tb_unit;
 				.pcpi_rs1(pcpi_rs1), .pcpi_rs2(pcpi_rs2), .pcpi_wr(pcpi_wr), .pcpi_rd(pcpi_rd),
 				.pcpi_wait(pcpi_wait), .pcpi_ready(pcpi_ready));
 		end else if (UNIT == 2) begin : u
-			pcpi_mul_booth #(.DIGITS(P)) dut (.clk(clk), .resetn(resetn), .pcpi_valid(pcpi_valid), .pcpi_insn(pcpi_insn),
+			pcpi_mul_booth `UNIT_PARAMS(DIGITS) dut (.clk(clk), .resetn(resetn), .pcpi_valid(pcpi_valid), .pcpi_insn(pcpi_insn),
 				.pcpi_rs1(pcpi_rs1), .pcpi_rs2(pcpi_rs2), .pcpi_wr(pcpi_wr), .pcpi_rd(pcpi_rd),
 				.pcpi_wait(pcpi_wait), .pcpi_ready(pcpi_ready));
 		end else if (UNIT == 3) begin : u
@@ -46,7 +54,7 @@ module tb_unit;
 				.pcpi_rs1(pcpi_rs1), .pcpi_rs2(pcpi_rs2), .pcpi_wr(pcpi_wr), .pcpi_rd(pcpi_rd),
 				.pcpi_wait(pcpi_wait), .pcpi_ready(pcpi_ready));
 		end else begin : u
-			pcpi_div_restoring #(.BITS(P)) dut (.clk(clk), .resetn(resetn), .pcpi_valid(pcpi_valid), .pcpi_insn(pcpi_insn),
+			pcpi_div_restoring `UNIT_PARAMS(BITS) dut (.clk(clk), .resetn(resetn), .pcpi_valid(pcpi_valid), .pcpi_insn(pcpi_insn),
 				.pcpi_rs1(pcpi_rs1), .pcpi_rs2(pcpi_rs2), .pcpi_wr(pcpi_wr), .pcpi_rd(pcpi_rd),
 				.pcpi_wait(pcpi_wait), .pcpi_ready(pcpi_ready));
 		end
@@ -87,6 +95,8 @@ module tb_unit;
 	endfunction
 
 	integer errors = 0, checks = 0, lat, i, j, k;
+	integer cyc = 0, cyc0 = 0;
+	always @(posedge clk) cyc = cyc + 1;
 	integer lat_min [0:7], lat_max [0:7];
 
 	task issue(input [2:0] f3, input [31:0] a, input [31:0] b);
@@ -141,11 +151,23 @@ module tb_unit;
 				for (k = 0; k < 4; k = k + 1)
 					issue(f3_base + k[2:0], corner[i], corner[j]);
 
+		// optional switching-activity dump for power analysis (+VCD): covers the
+		// random phase only, and reports its length so energy/op can be computed
+		if ($test$plusargs("VCD")) begin
+			$dumpfile("activity.vcd");
+			$dumpvars(1, u.dut);   // nets of the unit itself (not inside library cells)
+			cyc0 = cyc;
+		end
+
 		// random operands; every 4th divisor small so quotients are large
 		for (i = 0; i < N_RANDOM; i = i + 1)
 			issue(f3_base + ($unsigned($random) % 4), $random,
 			      (i % 4 == 0) ? ($random % 64) : $random);
 
+		if ($test$plusargs("VCD")) begin
+			$dumpoff;
+			$display("POWER_WINDOW ops=%0d cycles=%0d", N_RANDOM, cyc - cyc0);
+		end
 		if (errors == 0)
 			$display("UNIT TEST PASS (UNIT=%0d P=%0d): %0d checks", UNIT, P, checks);
 		else
